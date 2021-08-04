@@ -1,0 +1,17 @@
+.autorWrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-left: 16px;
+}
+
+.nombre {
+    color: var(--blue);
+    font-size: 18px;
+    font-family: 'Cutive Mono';
+    font-weight: 900;
+}
+
+.nombre:hover {
+    color: var(--blue2);
+}

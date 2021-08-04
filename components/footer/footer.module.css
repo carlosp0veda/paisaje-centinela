@@ -1,0 +1,11 @@
+.footerContainer{
+    align-self: end;
+  display: grid;
+  padding:16px 0 ;
+  grid-template-columns: 100vw;
+  width: 100vw;
+  margin-bottom: -100vh;
+  place-items: center;
+  background-color: var(--blue);
+  color: rgb(220, 220, 220);
+}

@@ -1,0 +1,19 @@
+.contenido{
+    margin:16px 20%;
+    text-align: justify;
+}
+
+.contenido li{
+    list-style: none;
+}
+
+.contenidoWrapper{
+    display: grid;
+    grid-template-columns: 15% 1fr;
+    justify-content: center;
+    align-content: center;
+    width: auto;
+    height: auto;
+    padding:16px;
+    background-color: rgba(255, 255, 255,0.8);
+}

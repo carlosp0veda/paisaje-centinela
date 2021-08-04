@@ -1,0 +1,50 @@
+.infoGrid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    margin: 32px;
+}
+
+.infoWrapper{
+    background-color: rgba(220, 220, 220,1);
+    width: 344px;
+    padding: 32px;
+    padding-top: 32px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.infoDesarrollo{
+    display: flex;
+    background-color: rgba(240, 240, 240,1);
+    flex-flow: column;
+   align-items: center;
+   padding:0 10%;
+   padding-top: 32px;
+   font-family: 'Cormorant Garamond';
+   font-size: 22px;
+}
+
+.nombre{
+    padding-bottom: 16px;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Georama';
+}
+
+.infoWrapper h4{
+    font-weight: 700;
+}
+
+.infoWrapper p{
+    width: 90%;
+    font-size: 18px;
+    font-family: 'Roboto';
+    align-self: flex-start;
+}
+
+.publicaciones {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+}

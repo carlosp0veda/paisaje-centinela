@@ -1,0 +1,42 @@
+.investigadoresGrid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-items: center;
+    margin:0 16px;
+}
+
+.investigadorCard{
+    width: 250px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin:16px;
+    padding: 32px 0;
+    background-color: rgba(140, 140, 140, 0.3);
+
+}
+
+.investigadorCard p{
+   text-align: center;
+   padding: 8px;
+   color: rgb(100, 100, 100);  
+}
+
+
+.investigadorCard a{
+    color: var(--blue);
+    font-size: 22px;
+    text-align: center;
+    padding: 8px 0;
+}
+
+.investigadorCard a:hover{
+    color: var(--blue2);
+
+}
+
+.fotoWrapper{
+    position: relative;
+    width: 200px;
+    height: 200px;
+}

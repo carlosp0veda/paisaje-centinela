@@ -1,0 +1,22 @@
+.pdfWrapper{
+    width: fit-content;
+    text-align: center;
+    padding: 16px 0;
+}
+
+.pdfLink {
+    padding-top: 16px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.icon {
+    margin-right: 8px;
+    color: var(--blue);
+}
+
+.link {
+    text-decoration: underline;
+    color: var(--blue);
+}

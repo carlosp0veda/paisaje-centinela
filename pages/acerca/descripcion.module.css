@@ -1,0 +1,19 @@
+.contentWrapper{
+    padding: 0 16px;
+    
+}
+
+.hero h2{
+    color: red;
+    
+}
+
+.contentWrapper p{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+}
+
+.contenido {
+    padding: 16px;
+    background-color: rgba(255, 255, 255,0.8);
+}

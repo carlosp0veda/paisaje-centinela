@@ -1,0 +1,14 @@
+.publicaciones{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(396px, 1fr));
+  justify-items: center;
+  gap: 8px;
+}
+
+.publicacionesGrid{
+  padding:0 32px; 
+}
+
+.activeItem{
+  display: none;
+}
