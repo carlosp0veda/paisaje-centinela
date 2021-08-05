@@ -37,7 +37,7 @@ const graphQLClient = new GraphQLClient(endpoint, {
 export const getPublicaciones = async () => {
 
     const query = gql`{
-  publicacionesCollection (order:aoDePublicacin_DESC) {
+  publicacionesCollection (order:sys_firstPublishedAt_DESC) {
     items {
       titulo 
       slug
@@ -86,6 +86,7 @@ const query = gql`
       fotoPdf {
         url
       }
+      aoDePublicacin
       pdfCollection {
         items {
           url
@@ -208,6 +209,7 @@ const query = gql`
       publicador{
         ... on Autor{
           nombre
+          slug
         }
       }
       sys{

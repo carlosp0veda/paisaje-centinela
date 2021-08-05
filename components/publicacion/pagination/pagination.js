@@ -1,3 +1,4 @@
+import {useState, useEffect} from 'react'
 import Link from "next/link";
 import styles from './pagination.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -5,6 +6,11 @@ import { faAngleDoubleLeft, faAngleDoubleRight } from '@fortawesome/free-solid-s
 
 export default function Pagination(props) {
   const { totalPages, currentPage, prevDisabled, nextDisabled } = props;
+
+  const {totalP, setTotalPage} = useState(totalPages)
+  const {currentP,setCurrentPage} = useState(currentPage)
+
+
 
   const prevPageUrl =
     currentPage === "2"

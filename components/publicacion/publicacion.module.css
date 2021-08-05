@@ -32,6 +32,11 @@
     color: var(--green);
 }
 
+.info h2:hover{
+    font-size: 16px;
+    color: var(--green2);
+}
+
 .info p{
     color: gray;
 }

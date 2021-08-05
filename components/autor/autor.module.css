@@ -6,12 +6,12 @@
 }
 
 .nombre {
-    color: var(--blue);
+    color: var(--blue2);
     font-size: 18px;
     font-family: 'Cutive Mono';
     font-weight: 900;
 }
 
 .nombre:hover {
-    color: var(--blue2);
+    color: var(--blue);
 }

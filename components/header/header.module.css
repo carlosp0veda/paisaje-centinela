@@ -2,10 +2,10 @@
   width: 100vw;
   height: 100px;
   position: relative;
-  z-index: 99;
+  z-index: 2;
   display: grid;
-  align-items: center;
-  grid-template-columns: 150px 1fr 100px;
+  place-items: center;
+  grid-template-columns: auto 1fr 250px;
   grid-template-rows: 100%;
   padding: 0 16px;
   grid-auto-flow: column;
@@ -23,6 +23,7 @@
 
 .logoWrapper {
   position: relative;
+  max-width: 250px;
 }
 
 .logoWrapper:before {
@@ -37,7 +38,7 @@
 
 .header h2 {
   font-size: 28px;
-  font-family: 'Georama', sans-serif;
+  font-family: 'Major Mono Display', monospace;
   color: var(--green);
 }
 
@@ -45,9 +46,14 @@
   color: var(--blue);
 }
 
+.imageWrapper{
+justify-self: end;
+padding: 32px;
+}
+
 .nicaraguahonduras{
-  max-width: 150px;
   font-size: 16px;
+  padding-top: 8px;
   color: var(--blue);
-  font-family: 'Georama';
+  font-family: 'Major Mono Display', monospace;
 }

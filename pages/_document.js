@@ -13,7 +13,7 @@ class CustomDocument extends Document {
         <Head>
           <link rel="preconnect" href="https://fonts.googleapis.com"/>
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"/>
-          <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Roboto&family=Georama&family=Cormorant+Garamond&family=Seymour+One&display=swap" rel="stylesheet"/>
+          <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Roboto&family=Georama&family=Cormorant+Garamond&family=Seymour+One&family=Major+Mono+Display&display=swap" rel="stylesheet"/>
         </Head>
         <body>
           <Main />

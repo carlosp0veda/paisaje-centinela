@@ -1,4 +1,5 @@
 import {getPublicaciones, getArticulos, getPaisajeCentinela} from '../utils/contentful'
+import {motion} from 'framer-motion'
 import Link from 'next/link'
 import FeaturedBanner from '../components/featuredBanner/featuredBanner'
 import styles from '../styles/index.module.css'
@@ -16,9 +17,9 @@ export default function Inicio({publicaciones, articulos, paisajeCentinela}) {
           <div>
             <p>{paisajeCentinela[0].excerp}</p>
             <Link href='/acerca'>
-              <a className={styles.ctaLink} >
+              <motion.button whileHover={{scale: 1.1}} whileTap={{scale: 0.9}} className={styles.ctaLink} >
                 Leer más...
-              </a>
+              </motion.button>
             </Link>
           </div>
         </section>

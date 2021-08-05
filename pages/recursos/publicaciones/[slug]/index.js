@@ -9,7 +9,7 @@ import {BLOCKS } from '@contentful/rich-text-types'
 
 
 function PublicacionPage({publicacion}) {
-    console.log(publicacion.autoresCollection)
+    console.log(publicacion[0])
 
     const RICHTEXT_OPTIONS = {
       renderNode: {
@@ -24,7 +24,7 @@ function PublicacionPage({publicacion}) {
             <CustomBreadcrumbs  />
             <Hero fotoURL={publicacion[0].foto?.url} width={publicacion[0].foto?.width} height={publicacion[0].foto?.height} date={publicacion[0].sys.firstPublishedAt}>{publicacion[0].titulo}</Hero>
             <div className={styles.body}>
-              <Pdf className={styles.test} pdfThumbnail={publicacion[0].fotoPdf?.url} titulo={publicacion[0].titulo} pdfUrl={publicacion[0].pdfCollection.items[0].url}/>
+              <Pdf className={styles.test} date={publicacion[0].aoDePublicacin} pdfThumbnail={publicacion[0].fotoPdf?.url} titulo={publicacion[0].titulo} pdfUrl={publicacion[0].pdfCollection.items[0].url}/>
 
               <div className={styles.resumen}>
                 {documentToReactComponents(publicacion[0].resumen.json, RICHTEXT_OPTIONS)}

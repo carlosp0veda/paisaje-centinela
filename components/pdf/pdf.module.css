@@ -1,3 +1,13 @@
+.pdfWrapper p {
+    font-family: 'Cutive Mono', monospace;
+    color: var(--blue);
+    font-weight: 700;
+}
+
+.pdfWrapper p strong{
+    font-family: 'Georama', sans-serif;
+}
+
 .pdfWrapper{
     width: fit-content;
     text-align: center;
@@ -18,5 +28,9 @@
 
 .link {
     text-decoration: underline;
+    color: var(--blue2);
+}
+
+.link:hover {
     color: var(--blue);
 }

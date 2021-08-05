@@ -1,3 +1,4 @@
+import {useState} from 'react'
 import styles from './publicaciones.module.css'
 import {useRouter} from 'next/router'
 import useSWR from 'swr'
@@ -13,6 +14,10 @@ import Pagination from '../../../components/publicacion/pagination/pagination'
 
 
 const PublicacionesPage = ({publicaciones, totalPages, currentPage}) => {
+
+  const {totalP, setTotalPages} = useState(totalPages)
+  const {currentP, setCurrentPage} = useState(currentPage)
+
     // const router = useRouter()
     // currentPage = router.query.page ?? '1'
     // const fetcher = async (currentPage) => await getPaginatedPublicaciones(currentPage)
