@@ -1,32 +1,27 @@
-import {useState, useEffect} from 'react'
 import Link from "next/link";
 import styles from './pagination.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft, faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons'
+import {ACTIONS} from '../../../store/actions'
 
 export default function Pagination(props) {
-  const { totalPages, currentPage, prevDisabled, nextDisabled } = props;
+  const { totalPages, currentPage, prevDisabled, nextDisabled, dispatch } = props;
 
-  const {totalP, setTotalPage} = useState(totalPages)
-  const {currentP,setCurrentPage} = useState(currentPage)
+  // const prevPageUrl =
+  //   currentPage === "2"
+  //     ? "/recursos/publicaciones"
+  //     : `/recursos/publicaciones/pagina/${parseInt(currentPage, 10) - 1}`;
 
-
-
-  const prevPageUrl =
-    currentPage === "2"
-      ? "/recursos/publicaciones"
-      : `/recursos/publicaciones/pagina/${parseInt(currentPage, 10) - 1}`;
-
-  const nextPageUrl = `/recursos/publicaciones/pagina/${parseInt(currentPage, 10) + 1}`;
+  // const nextPageUrl = `/recursos/publicaciones/pagina/${parseInt(currentPage, 10) + 1}`;
 
   return (
     <ol className={styles.list}>
       <li className={styles.item}>
         {prevDisabled && <FontAwesomeIcon icon={faAngleDoubleLeft}/>}
         {!prevDisabled && (
-          <Link href={prevPageUrl}>
-            <a><FontAwesomeIcon icon={faAngleDoubleLeft}/></a>
-          </Link>
+          <button className={styles.button} onClick={() => dispatch({type: ACTIONS.PREV})}>
+            <i><FontAwesomeIcon icon={faAngleDoubleLeft}/></i>
+          </button>
         )}
       </li>
       <li  className={styles.item} style={{padding: "0 8px"}}>
@@ -35,9 +30,9 @@ export default function Pagination(props) {
       <li className={styles.item}>
         {nextDisabled && <FontAwesomeIcon icon={faAngleDoubleRight}/>}
         {!nextDisabled && (
-          <Link href={nextPageUrl}>
-            <a><FontAwesomeIcon icon={faAngleDoubleRight}/></a>
-          </Link>
+          <button className={styles.button} onClick={() => dispatch({type: ACTIONS.NEXT})}>
+            <i><FontAwesomeIcon icon={faAngleDoubleRight}/></i>
+          </button>
         )}
       </li>
     </ol>

@@ -9,8 +9,6 @@ import {BLOCKS } from '@contentful/rich-text-types'
 
 
 function PublicacionPage({publicacion}) {
-    console.log(publicacion[0])
-
     const RICHTEXT_OPTIONS = {
       renderNode: {
       [BLOCKS.PARAGRAPH]: (node, children) => {

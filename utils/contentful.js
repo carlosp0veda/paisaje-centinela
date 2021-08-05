@@ -55,7 +55,9 @@ export const getPublicaciones = async () => {
       sys {
         id
       }
+      
     }
+    total
     }}`
 
     return graphQLClient.request(query)
@@ -118,45 +120,46 @@ const query = gql`
 return graphQLClient.request(query,{slug})
 }
 
-export const getPaginatedPublicaciones = async (page) => {
-
-        const skipMultiplier = page === 1 ? 0 : page - 1;
-        const skip =
-          skipMultiplier > 0 ? Config.pagination.pageSize * skipMultiplier : 0;
-
-
-        const query = gql`{
-        publicacionesCollection(limit: ${Config.pagination.pageSize}, skip: ${skip}, order:aoDePublicacin_DESC) {
+export const getTotalPublicaciones = async () => {
+  
+    const query = gql`
+      {
+        publicacionesCollection {
           total
-          items {
-      titulo 
-      slug
-      foto {
-          url
-          width
-          height
         }
-      fotoPdf {
-        url
-        width
-        height
       }
-      aoDePublicacin
-      sys {
-        id
-      }
-    }
-        }
-      }`;
+    `;
 
-       const data = await graphQLClient.request(query)
+    
+    const data = await graphQLClient.request(query)
 
-       const paginatedPublicaciones = data.publicacionesCollection
-      ? data.publicacionesCollection
-      : { total: 0, items: [] };
+    const totalPublicaciones = data.publicacionesCollection.total
+      ? data.publicacionesCollection.total
+      : 0;
 
-    return paginatedPublicaciones;
-    }
+    return totalPublicaciones;
+
+}
+
+
+
+// export const getPaginatedPublicaciones = async (query) => {
+
+//         const skipMultiplier = page === 1 ? 0 : page - 1;
+//         const skip =
+//           skipMultiplier > 0 ? Config.pagination.pageSize * skipMultiplier : 0;
+
+//       const query = query
+
+
+//        const data = await graphQLClient.request(query, {page})
+
+//        const paginatedPublicaciones = data.publicacionesCollection
+//       ? data.publicacionesCollection
+//       : { total: 0, items: [] };
+
+//     return paginatedPublicaciones;
+//     }
 
 
 
@@ -302,27 +305,6 @@ return graphQLClient.request(query,{slug})
 }
 
 // Utility functions 
-
-export const getTotalPublicaciones = async () => {
-  
-    const query = gql`
-      {
-        publicacionesCollection {
-          total
-        }
-      }
-    `;
-
-    
-    const data = await graphQLClient.request(query)
-
-    const totalPublicaciones = data.publicacionesCollection.total
-      ? data.publicacionesCollection.total
-      : 0;
-
-    return totalPublicaciones;
-
-}
 
 
 
