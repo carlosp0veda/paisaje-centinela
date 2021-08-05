@@ -12,9 +12,6 @@ import reducer from '../../../store/reducer'
 const PublicacionesPage = (props) => {
 
   const [state, dispatch] = useReducer(reducer, props)
-
-  console.log(state)
-
   const pageSize = Config.pagination.pageSize
    const currentPage = state.currentPage ?? 1;
   const currentPageIndex = currentPage === 1 ? 0 : state.currentPage - 1;
@@ -22,29 +19,8 @@ const PublicacionesPage = (props) => {
   
   const paginatedPage = state.publicaciones.items.slice(initialIndex,initialIndex+pageSize)
 
-  console.log(paginatedPage)
-
-  const publicaciones = paginatedPage
-
-//   const chunkArray = (myArray, chunk_size) => {
-//     let index = ;
-//     let arrayLength = myArray.length;
-//     let tempArray = [];
-    
-//     for (index = 0; index < arrayLength; index += chunk_size) {
-//         let myChunk = myArray.slice(index, index+chunk_size);
-//         tempArray.push(myChunk);
-//     }
-
-//     return tempArray;
-// }
-
-//    const paginatedP = chunkArray(publicaciones.items, pageSize)
-// console.log(paginatedP)
-   
-
-    const nextDisabled = parseInt(state.currentPage, 10) === parseInt(state.totalPages, 10);
-    const prevDisabled = parseInt(state.currentPage, 10) === 1;
+  const nextDisabled = parseInt(state.currentPage, 10) === parseInt(state.totalPages, 10);
+  const prevDisabled = parseInt(state.currentPage, 10) === 1;
 
     return (
         <main>
@@ -64,7 +40,6 @@ const PublicacionesPage = (props) => {
 export const getStaticProps = async () => {
 
   const data = await getPublicaciones();
-  console.log(data)
   const totalPages = Math.ceil(data.publicacionesCollection.total / Config.pagination.pageSize);
 
     return{
