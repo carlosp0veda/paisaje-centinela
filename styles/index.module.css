@@ -100,4 +100,8 @@
     grid-template-rows: auto auto;
     justify-items: center;
   }
+
+  .publicacionesGrid{
+    padding: 0;
+  }
 }

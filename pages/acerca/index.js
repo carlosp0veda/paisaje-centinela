@@ -25,7 +25,6 @@ function DescripcionPage({paisajeCentinela}) {
         <div className={styles.contenido}>
             {documentToReactComponents(paisajeCentinela[0].desarrolloDelContenido.json, RICHTEXT_OPTIONS)}
         </div>
-        <Pdf ></Pdf>
         </main>
     )
 }
