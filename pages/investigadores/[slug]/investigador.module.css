@@ -48,3 +48,14 @@
     justify-items: center;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
 }
+
+@media screen and (max-width:768px) {
+    .infoGrid{
+        grid-template-columns: 100vw;
+        grid-auto-rows: 1fr auto;
+        place-items: center;
+         margin: 32px 0;
+    }
+
+
+}
