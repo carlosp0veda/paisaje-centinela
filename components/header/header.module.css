@@ -1,6 +1,6 @@
 .header {
   width: 100vw;
-  height: 100px;
+  height: 128px;
   position: relative;
   z-index: 2;
   display: grid;
@@ -9,7 +9,7 @@
   grid-template-rows: 100%;
   padding: 0 16px;
   grid-auto-flow: column;
-  background-color: #fff;
+   background: linear-gradient(to bottom, #f8f8f8, #ffffff);
 }
 
 .header:before {
