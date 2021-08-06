@@ -4,8 +4,6 @@ import Menutoggle from '../navigation/sidedrawer/MenuToggle/MenuToggle'
 import Image from 'next/image'
 import styles from './header.module.css'
 import{motion} from 'framer-motion'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 
 export default function Header(props) {

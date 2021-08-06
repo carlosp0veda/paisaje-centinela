@@ -1,4 +1,5 @@
 import styles from './descripcion.module.css'
+import Pdf from '../../components/pdf/pdf'
 import Hero from '../../components/hero/hero'
 import Header3 from '../../components/UI/header3/header3'
 import {getPaisajeCentinela} from '../../utils/contentful'
@@ -6,7 +7,6 @@ import {documentToReactComponents} from '@contentful/rich-text-react-renderer'
 import {BLOCKS, INLINES} from '@contentful/rich-text-types'
 
 function DescripcionPage({paisajeCentinela}) {
-    console.log(paisajeCentinela)
 
     const RICHTEXT_OPTIONS = {
       renderNode: {
@@ -25,6 +25,7 @@ function DescripcionPage({paisajeCentinela}) {
         <div className={styles.contenido}>
             {documentToReactComponents(paisajeCentinela[0].desarrolloDelContenido.json, RICHTEXT_OPTIONS)}
         </div>
+        <Pdf ></Pdf>
         </main>
     )
 }
