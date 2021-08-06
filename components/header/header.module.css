@@ -42,6 +42,13 @@
   color: var(--green);
 }
 
+.nicaraguahonduras{
+  font-size: 16px;
+  padding-top: 8px;
+  color: var(--blue);
+  font-family: 'Major Mono Display', monospace;
+}
+
 .searchIcon {
   color: var(--blue);
 }
@@ -51,9 +58,17 @@ justify-self: end;
 padding: 32px;
 }
 
-.nicaraguahonduras{
-  font-size: 16px;
-  padding-top: 8px;
-  color: var(--blue);
-  font-family: 'Major Mono Display', monospace;
+@media screen and (max-width: 768px) {
+
+  .header{
+    grid-template-columns: 1fr 150px ;
+  }
+  
+  .logo2 {
+    display: none;
+}
+
+.header nav {
+  display: none;
+}
 }

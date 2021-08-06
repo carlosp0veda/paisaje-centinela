@@ -1,0 +1,75 @@
+.SideDrawer {
+  position: fixed;
+  width: 280px;
+  max-width: 70%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  z-index: 999;
+  background-color: white;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+  transition: transform 0.3s ease-out;
+}
+
+.logo h2 {
+  font-size: 28px;
+  font-family: 'Major Mono Display', monospace;
+  color: var(--green);
+}
+
+.nicaraguahonduras{
+  font-size: 16px;
+  padding-top: 8px;
+  color: var(--blue);
+  font-family: 'Major Mono Display', monospace;
+}
+
+.list {
+  list-style: none;
+  padding-top: 32px;
+  display: flex;
+  flex-flow: column;
+  gap: 16px;
+  align-items: flex-end;
+}
+
+.listItem{
+  align-items: flex-end;
+}
+
+.listLink {
+  display: block;
+  color: var(--blue);
+  font-size: 24px;
+  text-align: end;
+  font-family: 'Georama', sans-serif;
+}
+
+.listLink:hover {
+  transform: translateX(-16px);
+  transition: .2s ease-in-out;
+  color: var(--green);
+}
+
+.listLink:focus {
+  color: var(--green);
+}
+
+
+
+
+@media screen and (min-width: 769px) {
+  .SideDrawer {
+    display: none;
+  }
+}
+
+.Open {
+  transform: translateX(0);
+}
+
+.Close {
+  transform: translateX(100%);
+}
+

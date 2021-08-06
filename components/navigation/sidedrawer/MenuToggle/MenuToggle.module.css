@@ -1,0 +1,24 @@
+.MenuToggle {
+  width: 40px;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 10px 0;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.MenuToggle div {
+  width: 90%;
+  height: 3px;
+  margin: 4px 0;
+  background-color: var(--blue);
+}
+
+@media (min-width: 768px) {
+  .MenuToggle {
+    display: none;
+  }
+}

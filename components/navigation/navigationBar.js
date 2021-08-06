@@ -1,7 +1,7 @@
 import Link from 'next/link'
-import styles from './navigation.module.css'
+import styles from './navigationBar.module.css'
 
-const navigation = () => {
+const NavigationBar = () => {
     return (
         <nav className={styles.navigation}>
             <ul className={styles.navigationList}>
@@ -15,4 +15,4 @@ const navigation = () => {
     )
 }
 
-export default navigation
+export default NavigationBar

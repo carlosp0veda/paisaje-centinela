@@ -13,7 +13,7 @@ const PublicacionesPage = (props) => {
 
   const [state, dispatch] = useReducer(reducer, props)
   const pageSize = Config.pagination.pageSize
-   const currentPage = state.currentPage ?? 1;
+  const currentPage = state.currentPage ?? 1;
   const currentPageIndex = currentPage === 1 ? 0 : state.currentPage - 1;
   const initialIndex = currentPageIndex > 0 ? pageSize * currentPageIndex : 0;
   
