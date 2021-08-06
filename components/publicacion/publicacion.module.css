@@ -2,9 +2,9 @@
     display: grid;
     position: relative;
     margin-bottom: 32px;
-    width: 356px;
+    width: 344px;
     height: 160px;
-    grid-template-columns: minmax(64px, 100px) minmax(250px,1fr);
+    grid-template-columns: minmax(64px, 88px) minmax(256px,1fr);
     grid-template-rows: 160px;
     
     /* border-bottom: 1px solid rgb(145, 145, 145); */

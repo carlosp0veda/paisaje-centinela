@@ -27,7 +27,7 @@ function InvestigadorPage({investigador}) {
       }
     }
     
-return (<main>
+return (<main className={styles.mainWrapper}>
       <CustomBreadcrumbs/>
       <section className={styles.infoGrid}>
         <div className={styles.infoWrapper}>

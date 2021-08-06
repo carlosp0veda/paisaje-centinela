@@ -89,11 +89,6 @@
   padding:0 32px; 
 }
 
-.publicaciones{
-  /* padding-right: 16px; */
-  /* padding:0 16px; */
-}
-
 @media screen and (max-width: 1024px) {
   .recrusosGrid{
     grid-template-columns: 100vw;
