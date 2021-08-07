@@ -8,9 +8,8 @@
 
 .body{
     display: grid;
-    margin:8px 16px;
+    margin:0 16px;
     grid-template-columns: 15% auto 25%;
-    padding-top: 16px;
     justify-content: center;
 }
 
@@ -18,7 +17,7 @@
     display: grid;
     max-width: 560px;
     background-color: rgba(255, 255, 255,0.8);
-    padding: 16px;
+    padding: 16px 32px;
     font-family: 'Cormorant Garamond', serif;
     font-size: 20px;
     text-align: justify;
