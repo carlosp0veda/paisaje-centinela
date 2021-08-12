@@ -39,7 +39,7 @@ function PublicacionPage({publicacion}) {
                 </div>
                 <div>
                   <Header4>Categoría</Header4>
-                  {publicacion[0].categoria.map(c => <span className={styles.badge} key={c}>{c}</span>)}
+                  {publicacion[0].categoria?.map(c => <span className={styles.badge} key={c}>{c}</span>)}
                 </div>
               </div>
             </section>
