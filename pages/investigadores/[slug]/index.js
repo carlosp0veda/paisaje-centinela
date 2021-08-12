@@ -17,8 +17,6 @@ function InvestigadorPage({investigador}) {
       }
     })
 
-    console.log(publicacionesRecientes)
-
     const RICHTEXT_OPTIONS = {
       renderNode: {
       [BLOCKS.PARAGRAPH]: (node, children) => {
