@@ -55,7 +55,6 @@ export const getPublicaciones = async () => {
       sys {
         id
       }
-      
     }
     total
     }}`
@@ -92,6 +91,11 @@ const query = gql`
       pdfCollection {
         items {
           url
+        }
+      }
+      contentfulMetadata {
+        tags {
+          name
         }
       }
       autoresCollection {
@@ -304,7 +308,85 @@ const query = gql`
 return graphQLClient.request(query,{slug})
 }
 
-// Utility functions 
+// Presentaciones functions 
+
+
+export const getPresentaciones = async () => {
+
+    const query = gql`{
+  presentacionesCollection {
+    items {
+      tituloDePresentacion
+      capturaPortada {
+        url
+      }
+      slug
+      sys{
+        id
+        firstPublishedAt
+      }
+    }
+  }
+}
+`
+
+    return graphQLClient.request(query)
+}
+
+export const getPresentacion = async (slug) => {
+
+    const query = gql`
+     query getPresentacion($slug: String!){
+  presentacionesCollection(
+    limit:1,
+    where: {
+      slug: $slug
+    }
+  ) {
+    items {
+      tituloDePresentacion
+      capturaPortada {
+        url
+        width
+        height
+      }
+      sys{
+        firstPublishedAt
+      }
+      slug
+      presentacion {
+        url
+      }
+    }
+  }
+}
+`
+
+    return graphQLClient.request(query, {slug})
+}
+
+
+
+
+// Socios functions 
+
+
+export const getSocios = async () => {
+
+    const query = gql`{
+      sociosCollection {
+        items {
+          nombre
+          logo {
+            url
+          }
+          web
+        }
+      }
+    }`
+
+    return graphQLClient.request(query)
+}
 
 
 

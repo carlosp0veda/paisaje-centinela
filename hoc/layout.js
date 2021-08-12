@@ -4,6 +4,8 @@ import SideDrawer from '../components/navigation/sidedrawer/sidedrawer'
 import Footer from '../components/footer/footer'
 import Head from 'next/head'
 
+
+
 function layout({children}) {
 
       const [sideDrawer, setSideDrawer] = useState({
@@ -12,10 +14,6 @@ function layout({children}) {
 
   const sideDrawerCloseHandler = () => {
     setSideDrawer({ showSideDrawer: false });
-  };
-
-  const sideDrawerOpenHandler = () => {
-    setSideDrawer({ showSideDrawer: true });
   };
 
   const toggleSideDrawerHandler = () => {

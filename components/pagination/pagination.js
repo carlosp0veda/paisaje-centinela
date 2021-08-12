@@ -2,17 +2,10 @@ import Link from "next/link";
 import styles from './pagination.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleDoubleLeft, faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons'
-import {ACTIONS} from '../../../store/actions'
+import {ACTIONS} from '../../store/actions'
 
 export default function Pagination(props) {
   const { totalPages, currentPage, prevDisabled, nextDisabled, dispatch } = props;
-
-  // const prevPageUrl =
-  //   currentPage === "2"
-  //     ? "/recursos/publicaciones"
-  //     : `/recursos/publicaciones/pagina/${parseInt(currentPage, 10) - 1}`;
-
-  // const nextPageUrl = `/recursos/publicaciones/pagina/${parseInt(currentPage, 10) + 1}`;
 
   return (
     <ol className={styles.list}>

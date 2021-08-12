@@ -1,0 +1,34 @@
+.publicaciones{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(382px, 1fr));
+  justify-items: center;
+  gap: 8px;
+}
+
+.publicacionesGrid{
+  padding:0 32px; 
+}
+
+.presentaciones{
+  display: grid;
+  padding-top: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  justify-items: center;
+  gap: 8px;
+}
+
+.presentacionesGrid{
+  padding:0 32px; 
+}
+
+@media screen and (max-width:768px) {
+  .publicacionesGrid{
+  padding:0; 
+}
+
+.presentacionesGrid{
+  padding:0; 
+}
+
+}
+

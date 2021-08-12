@@ -2,7 +2,7 @@ import Head from 'next/head'
 import '../styles/globals.css'
 import Layout from '../hoc/layout'
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps}) {
   return (
     <>
       <Head>
@@ -15,5 +15,6 @@ function MyApp({ Component, pageProps }) {
   )
   
 }
+
 
 export default MyApp

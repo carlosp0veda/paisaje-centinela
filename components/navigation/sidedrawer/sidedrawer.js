@@ -8,9 +8,6 @@ const sideDrawer = (props) => {
   if (props.open) {
     attachedStyles = [styles.SideDrawer, styles.Open];
   }
-
-  console.log(attachedStyles)
-
   return (
     <>
       <Backdrop clicked={props.closed} show={props.open} />
@@ -18,7 +15,7 @@ const sideDrawer = (props) => {
          <Link href="/">
         <a>
             <div  className={styles.logoWrapper}>
-                <div className={styles.logo} whileTap={{scale: 0.9}}>
+                <div className={styles.logo}>
                     <h2>Paisaje Centinela</h2>
                     <p className={styles.nicaraguahonduras}>nicaragua-honduras</p>
                 </div>
@@ -29,7 +26,7 @@ const sideDrawer = (props) => {
           <ul className={styles.list}>
                 <li className={styles.listItem} ><Link href='/acerca'><a className={styles.listLink}>Paisaje Centinela</a></Link></li>
                 <li className={styles.listItem} ><Link href='/articulos'><a  className={styles.listLink}>Artículos</a></Link></li>
-                <li className={styles.listItem} ><Link href='/recursos/publicaciones'><a className={styles.listLink}>Recursos</a></Link></li>
+                <li className={styles.listItem} ><Link href='/recursos'><a className={styles.listLink}>Recursos</a></Link></li>
                 <li className={styles.listItem} ><Link href='/investigadores'><a  className={styles.listLink}>Equipo</a></Link></li>
             </ul>
         </nav>

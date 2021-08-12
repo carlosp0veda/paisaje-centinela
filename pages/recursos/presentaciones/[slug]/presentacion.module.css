@@ -1,0 +1,10 @@
+.mainWrapper{
+    display: grid;
+}
+
+.iframe{
+    display: block;
+    border: 2px solid white;
+    justify-self: center;
+
+}

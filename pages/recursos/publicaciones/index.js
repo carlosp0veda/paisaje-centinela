@@ -5,7 +5,7 @@ import {getPublicaciones} from '../../../utils/contentful'
 import CustomBreadcrumbs from '../../../components/breadcrumbs/CustomBreadcrumbs'
 import Header3 from '../../../components/UI/header3/header3'
 import Publicacion from '../../../components/publicacion/publicacion'
-import Pagination from '../../../components/publicacion/pagination/pagination'
+import Pagination from '../../../components/pagination/pagination'
 import reducer from '../../../store/reducer'
 
 
