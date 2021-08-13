@@ -4,7 +4,7 @@
     margin-bottom: 64px;
     max-width: 400px;
     height: 128px;
-    grid-template-columns: minmax(96px, 128px) minmax(192px, 256px);
+    grid-template-columns: minmax(96px, 144px) minmax(192px, 256px);
     grid-template-rows: 128px;
     
     /* border-bottom: 1px solid rgb(145, 145, 145); */
@@ -28,7 +28,7 @@
 }
 
 .titulo{
-    max-width: 250px;
+    max-width: 256px;
     font-size: 16px;
     color: var(--green);
 }
