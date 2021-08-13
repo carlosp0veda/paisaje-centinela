@@ -1,21 +1,14 @@
 .presentaciones{
   display: grid;
   padding-top: 32px;
-  width: 350px;
-  grid-template-columns: repeat(auto-fit, minmax(256px, 100vw));
-  /* justify-items: center; */
+  width: 100vw;
+  grid-template-columns: repeat(auto-fit, minmax(356px, 512px));
+  justify-items: center;
+  place-items: center;
   gap: 8px;
 }
 
 .presentacionesGrid{
-  padding:0 32px; 
   max-width: 100vw;
   background-color: rgba(255, 255, 255,0.8)
-}
-
-@media screen and (max-width:768px) {
-  .presentacionesGrid{
-  padding:0; 
-}
-
 }
