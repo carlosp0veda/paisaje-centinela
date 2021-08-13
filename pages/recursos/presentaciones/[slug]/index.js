@@ -8,7 +8,7 @@ function PresentacionPage({presentacion}) {
     return (
       <main className={styles.mainWrapper}>
             <CustomBreadcrumbs  />
-            <iframe src={`${presentacion[0].presentacion?.url}#view=fitH&toolbar=1`} type="application/pdf" width="100%" height='600px' className={styles.iframe} />
+            <iframe src={`${presentacion[0].presentacion?.url}#view=fitH&toolbar=1`} scrolling='no' type="application/pdf" width="100%" height='600px' className={styles.iframe} />
       </main>)
 
 }

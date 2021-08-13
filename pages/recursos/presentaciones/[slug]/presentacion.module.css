@@ -4,7 +4,7 @@
 
 .iframe{
     display: block;
+    min-width: 100%;
     border: 2px solid white;
     justify-self: center;
-
 }

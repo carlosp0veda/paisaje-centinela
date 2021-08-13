@@ -34,15 +34,16 @@ export default function Inicio({publicaciones, articulos, presentaciones, paisaj
             {articulos.map((articulo) => ( <DynamicCard key={articulo.sys.id} date={articulo.sys.firstPublishedAt} fotoURL={articulo.imagen?.url} width={articulo.imagen?.width} height={articulo.imagen?.height} url={`/articulos/${encodeURIComponent(articulo.slug)}`} >{articulo.titulo}</DynamicCard>)
             )}
             </div>
+            <Header3>Bases de datos<Link href='/bd'><span>Ver todas...</span></Link></Header3>
           </div>
           <div className={styles.rightGrid}>
             <Header3>Publicaciones<Link href='/recursos/publicaciones'><span>Ver todas...</span></Link></Header3>
-            <div className={styles.publicaciones}>
+            <div>
             {publicaciones.map((publicacion) => ( <DynamicPublicacion key={publicacion.sys.id} date={publicacion.aoDePublicacin?.slice(0,4)} titulo={publicacion.titulo} pdfThumbnail={publicacion.fotoPdf?.url} url={`/recursos/publicaciones/${encodeURIComponent(publicacion.slug)}`} >{publicacion.resumen}</DynamicPublicacion>)
             )}
             </div>
             <Header3>Presentaciones<Link href='/recursos/presentaciones'><span>Ver todas...</span></Link></Header3>
-            <div className={styles.publicaciones}>
+            <div>
             {presentaciones.map((presentacion) => ( <DynamicPresentacion key={presentacion.sys.id} date={presentacion.sys.firstPublishedAt.slice(0,4)} titulo={presentacion.tituloDePresentacion} pdfThumbnail={presentacion.capturaPortada?.url} url={`/recursos/presentaciones/${encodeURIComponent(presentacion.slug)}`} >{presentacion.tituloDePresentacion}</DynamicPresentacion>)
             )}
             </div>

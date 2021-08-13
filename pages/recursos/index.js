@@ -13,7 +13,7 @@ const RecursosPage = ({publicaciones, presentaciones}) => {
     return (
         <main>
         <CustomBreadcrumbs/>
-         <div className={styles.publicacionesGrid}>
+         <div className={styles.recursosGrid}>
             <Header3>Publicaciones<Link href='/recursos/publicaciones'><span>Ver todas...</span></Link></Header3>
             <div className={styles.publicaciones}>{
             publicaciones.map((publicacion) => ( <Publicacion key={publicacion.sys.id} date={publicacion.aoDePublicacin} titulo={publicacion.titulo} pdfThumbnail={publicacion.fotoPdf?.url} url={`/recursos/publicaciones/${encodeURIComponent(publicacion.slug)}`} >{publicacion.resumen}</Publicacion>))

@@ -30,7 +30,7 @@
     font-family: 'Georama', sans-serif;
 }
 
-.navigationLink:focus {
+.navigationLink:focus, .navigationLink:hover {
     color: var(--green);
 }
 
@@ -82,62 +82,3 @@
   border-radius: 8px;
   transition: .3s ease-in-out;
 }
-
-
-/* .container {
-  width: 50%;
-  margin: 0 auto;
-}
-
-ul li {
-  display: inline;
-  text-align: center;
-}
-
-a {
- 
-  color: #333;
-}
-
-.two:hover ~ hr {
-  margin-left: 25%;
-}
-
-.three:hover ~ hr {
-  margin-left: 50%;
-}
-
-.four:hover ~ hr {
-  margin-left: 75%;
-}
- */
-
-
-
-
-
-
-
-
-
-
-
-/* .navigationLink::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width:100% ;
-    height: 100%;
-    border-bottom: 2px wavy var(--blue);
-    transform: scaleX(0.6);
-    
-    
-}
-
-.navigationLink::after:active{
-
-    transform: scaleX(1);
-    
-    
-} */

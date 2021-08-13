@@ -27,6 +27,7 @@
 .titulo{
     max-width: 250px;
     font-size: 16px;
+    font-family: 'Georama', sans-serif;
     color: var(--green);
 }
 

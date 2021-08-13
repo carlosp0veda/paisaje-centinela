@@ -27,6 +27,11 @@
     color:var(--blue2);
 }
 
+.breadcrumbsInactive:hover{
+    color:var(--blue);
+}
+
+
 .breadcrumbsInactive::after{
     content: '    ';
     position: absolute;

@@ -2,12 +2,10 @@
     display: grid;
     position: relative;
     margin-bottom: 64px;
-    max-width: 400px;
+    width: 352px;
     height: 128px;
-    grid-template-columns: minmax(96px, 144px) minmax(192px, 256px);
+    grid-template-columns: minmax(120px, 144px) minmax(224px, 256px);
     grid-template-rows: 128px;
-    
-    /* border-bottom: 1px solid rgb(145, 145, 145); */
 }
 
 .presentacion::after{
@@ -17,7 +15,6 @@
     width: 100%;
     height: 1px;
     background-color: rgb(180, 180, 180)
-    /* border-bottom: 1px solid rgb(145, 145, 145); */
 }
 
 .info {
@@ -28,8 +25,8 @@
 }
 
 .titulo{
-    max-width: 256px;
     font-size: 16px;
+    font-family: 'Georama', sans-serif;
     color: var(--green);
 }
 
