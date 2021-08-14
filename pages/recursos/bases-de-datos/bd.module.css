@@ -13,6 +13,7 @@
 .file{
     display: flex;
     width: 90%;
+    height: auto;
     padding: 16px 0;
     justify-content: center;
     border-top: 2px solid var(--blue);
@@ -20,7 +21,7 @@
 }
 
 .fileInfo{
-    max-width: 556px;
+    min-width:320px;
     display: grid;
     gap: 16px;
     place-items: center;
