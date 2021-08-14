@@ -20,7 +20,7 @@ const footer = () => {
             </nav> */}
         </div>
 
-        <div>
+        <div className={styles.lowerGrid}>
             &copy; {year} Paisaje Centinela
         </div>
         </footer>

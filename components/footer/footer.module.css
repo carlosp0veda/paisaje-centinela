@@ -1,6 +1,5 @@
 .footerContainer{
   display: grid;
-  padding:16px 0;
   grid-template-columns: 100vw;
   width: 100vw;
   place-items: center;
@@ -11,8 +10,16 @@
 
 .upperGrid{
   display: grid;
-  width: 100%;
+  width: 90%;
   height: auto;
   place-items: center;
+  padding: 8px 0;
+  border-bottom:1px solid rgb(110, 110, 110) ;
+}
 
+.lowerGrid{
+  display: grid;
+  place-items: center;
+  justify-content: center;
+  padding: 16px 0;
 }
