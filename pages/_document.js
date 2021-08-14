@@ -11,6 +11,7 @@ class CustomDocument extends Document {
     return (
       <Html>
         <Head>
+          <meta name="description" content="Paisaje Centinela Nicaragua-Honduras" />
           <link rel="preconnect" href="https://fonts.googleapis.com"/>
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"/>
           <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Roboto&family=Georama&family=Cormorant+Garamond&family=Seymour+One&family=Major+Mono+Display&display=swap" rel="stylesheet"/>
