@@ -86,6 +86,6 @@ export const getStaticProps = async () => {
       bds: dataBD.basesDeDatosCollection.items.slice(0,3), 
       paisajeCentinela: dataPaisajeCentinela.paisajeCentinelaCollection.items
       },
-      revalidate: 900  
+      revalidate: 300  
     }
 }

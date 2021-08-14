@@ -55,7 +55,7 @@ export const getStaticProps = async () => {
       presentaciones: dataPresentaciones.presentacionesCollection.items.slice(0,9),
       bds: dataBD.basesDeDatosCollection.items.slice(0,6),
       },
-      revalidate: 900      
+      revalidate: 300      
     }
 }
 

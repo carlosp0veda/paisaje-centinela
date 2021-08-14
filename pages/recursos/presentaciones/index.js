@@ -27,7 +27,7 @@ export const getStaticProps = async () => {
       props: {
       presentaciones: data.presentacionesCollection.items,
       },
-      revalidate: 900      
+      revalidate: 300      
     }
 }
 

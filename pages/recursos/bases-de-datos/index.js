@@ -37,7 +37,7 @@ export const getStaticProps = async () => {
       props: {
       bds: data.basesDeDatosCollection.items
       },
-      revalidate: 900      
+      revalidate: 300      
     }
 }
 

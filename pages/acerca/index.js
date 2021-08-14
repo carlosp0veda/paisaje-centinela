@@ -38,7 +38,7 @@ export const getStaticProps = async () => {
       props: {
       paisajeCentinela: data.paisajeCentinelaCollection.items
       },
-      revalidate: 900  
+      revalidate: 300  
     }
 }
 

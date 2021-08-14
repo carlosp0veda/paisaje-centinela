@@ -34,7 +34,7 @@ export const getStaticProps = async (context) => {
 
     return{
       props: {presentacion: data.presentacionesCollection.items},
-      revalidate: 900
+      revalidate: 300
     }
 }
 

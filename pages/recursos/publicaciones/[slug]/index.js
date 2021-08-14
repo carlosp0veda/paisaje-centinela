@@ -71,7 +71,7 @@ export const getStaticProps = async (context) => {
 
     return{
       props: {publicacion: data.publicacionesCollection.items},
-      revalidate: 900
+      revalidate: 300
     }
 }
 
