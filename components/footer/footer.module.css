@@ -1,10 +1,18 @@
 .footerContainer{
   display: grid;
-  padding:16px 0 ;
+  padding:16px 0;
   grid-template-columns: 100vw;
   width: 100vw;
   place-items: center;
   background-color: rgb(220, 220, 220);
   color: var(--blue);
   margin-top: auto;
+}
+
+.upperGrid{
+  display: grid;
+  width: 100%;
+  height: auto;
+  place-items: center;
+
 }

@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import styles from './layout.module.css'
 import Header from '../components/header/header'
 import SideDrawer from '../components/navigation/sidedrawer/sidedrawer'
 import Footer from '../components/footer/footer'
@@ -22,7 +23,7 @@ function layout({children}) {
     });
   };
     return (
-        <>
+        <div className={styles.container}>
         <Head>
             <title>Paisaje Centinela</title>
             <meta name="description" content="Paisaje Centinela" />
@@ -32,7 +33,7 @@ function layout({children}) {
          {children}
          <Footer/>
 
-        </>
+        </div>
     )
 }
 

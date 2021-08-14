@@ -4,8 +4,10 @@ import Link from 'next/link'
 
 const Presentacion = (props) => {
     return (
-        <article className={styles.presentacion}>  
-            <Image src={props.pdfThumbnail ?? "https://i.stack.imgur.com/y9DpT.jpg"} width={144} height={96} alt={props.titulo}/>
+        <article className={styles.presentacion}>
+            <div className={styles.imageWrapper}>  
+                <Image src={props.pdfThumbnail ?? "https://i.stack.imgur.com/y9DpT.jpg"} width={144} height={96} alt={props.titulo}/>
+            </div>
             <div className={styles.info}>
             <p className={styles.date}>{props.date?.slice(0,4)}</p>
             <Link href={props.url}>

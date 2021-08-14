@@ -19,7 +19,7 @@
     z-index: 1;
     bottom: 32px;
     left: 5vw;
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
 }
 
 .Copy h2 {
@@ -29,15 +29,11 @@
 }
 
 .Copy p {
-    font-family: 'Cutive Mono';
+    font-family: 'Cutive Mono', monospace;
     font-size: 16px;
 }
 
 @media screen and (max-width:768px)  {
-
-    /* .Copy{
-        left: 16px;
-    } */
 
     .Copy h2 {
         font-size: 20px;

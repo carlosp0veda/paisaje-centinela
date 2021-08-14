@@ -366,6 +366,32 @@ export const getPresentacion = async (slug) => {
 }
 
 
+// Base de datos functions 
+
+export const getBasesDeDatos = async () => {
+
+    const query = gql`{
+  basesDeDatosCollection {
+    items {
+      nombre
+      descripcion
+      aoDePublicacin
+      archivoCollection {
+        items {
+          url
+        }
+      }
+      sys{
+        id
+      }
+    }
+  }
+}
+`
+
+    return graphQLClient.request(query)
+}
+
 
 
 // Socios functions 

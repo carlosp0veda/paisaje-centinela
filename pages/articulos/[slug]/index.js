@@ -21,14 +21,12 @@ function ArticuloPage({articulo}) {
         <CustomBreadcrumbs/>
         <Hero fotoURL={articulo[0].imagen?.url} width={articulo[0].imagen?.width} height={articulo[0].imagen?.height} date={articulo[0].sys.firstPublishedAt}>{articulo[0].titulo}</Hero>
         <section className={styles.contenidoWrapper}>
-        <div className={styles.publicador}>
-          <p><strong>PUBLICADO POR:</strong></p>
-          <Link href={`/investigadores/${articulo[0].publicador.slug}`}><a className={styles.link}>{articulo[0].publicador.nombre}</a></Link>
-
-        </div>
-        <div className={styles.copy}>
-        {documentToReactComponents(articulo[0].contenido.json, RICHTEXT_OPTIONS)}
-        </div>
+          <div className={styles.publicador}>
+            <p><strong>PUBLICADO POR: <Link href={`/investigadores/${articulo[0].publicador.slug}`}><a className={styles.link}>{articulo[0].publicador.nombre}</a></Link></strong></p>
+          </div>
+          <div className={styles.copy}>
+          {documentToReactComponents(articulo[0].contenido.json, RICHTEXT_OPTIONS)}
+          </div>
         </section>
       </main>
     )

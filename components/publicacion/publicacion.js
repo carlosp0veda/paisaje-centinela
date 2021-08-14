@@ -5,7 +5,9 @@ import Link from 'next/link'
 const Publicacion = (props) => {
     return (
         <article className={styles.publicacion}>  
-            <Image src={props.pdfThumbnail ?? "https://www.genius100visions.com/wp-content/uploads/2017/09/placeholder-vertical.jpg"} width={100} height={props.height ?? 150} alt={props.titulo}/>
+            <div className={styles.imageWrapper}>
+                <Image src={props.pdfThumbnail ?? "https://www.genius100visions.com/wp-content/uploads/2017/09/placeholder-vertical.jpg"} width={100} height={props.height ?? 150} alt={props.titulo}/>
+            </div>
             <div className={styles.info}>
             <p className={styles.date}>{props.date?.slice(0,4)}</p>
             <Link href={props.url}>
