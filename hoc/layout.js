@@ -23,16 +23,18 @@ function layout({children}) {
     });
   };
     return (
-        <div className={styles.container}>
+        <>
         <Head>
             <title>Paisaje Centinela</title>
         </Head>
+        <div className={styles.container}>
          <Header clicked={toggleSideDrawerHandler}/>
          <SideDrawer  open={sideDrawer.showSideDrawer} closed={sideDrawerCloseHandler}/>
          {children}
          <Footer/>
 
         </div>
+        </>
     )
 }
 
