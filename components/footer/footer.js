@@ -21,7 +21,7 @@ const footer = () => {
         </div>
 
         <div className={styles.lowerGrid}>
-            &copy; {year} Paisaje Centinela
+            <p>&copy; {year} Paisaje Centinela Nicaragua-Honduras</p><p>Desarrollado por <Link href='https://www.linkedin.com/in/carlos-poveda-649a26127/'><a className={styles.profileLink}>Carlos Poveda</a></Link></p> 
         </div>
         </footer>
         <Script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer/>

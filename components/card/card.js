@@ -1,5 +1,4 @@
 import styles from './card.module.css'
-import LinkCTA from '../UI/CTA/LinkCTA'
 import Image from 'next/image'
 import Link from 'next/link'
 
