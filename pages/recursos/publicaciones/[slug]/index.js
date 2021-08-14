@@ -1,4 +1,5 @@
 import { getPublicacion, getPublicaciones } from "../../../../utils/contentful";
+import Head from 'next/head'
 import styles from './publicacion.module.css'
 import CustomBreadcrumbs from '../../../../components/breadcrumbs/CustomBreadcrumbs'
 import Hero from '../../../../components/hero/hero'
@@ -20,9 +21,14 @@ function PublicacionPage({publicacion}) {
     }
 
     return (
+      <>
+      <Head>
+        <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=6117600e030dfe00134038f2&product=sticky-share-buttons" async="async"></script>
+      </Head>
       <main>
             <CustomBreadcrumbs  />
             <Hero fotoURL={publicacion[0].foto?.url} width={publicacion[0].foto?.width} height={publicacion[0].foto?.height} date={publicacion[0].sys.firstPublishedAt}>{publicacion[0].titulo}</Hero>
+            <div class="sharethis-sticky-share-buttons"></div>
             <section className={styles.body}>
               <Pdf className={styles.test} date={publicacion[0].aoDePublicacin} pdfThumbnail={publicacion[0].fotoPdf?.url} titulo={publicacion[0].titulo} pdfUrl={publicacion[0].pdfCollection.items[0].url}/>
 
@@ -44,7 +50,9 @@ function PublicacionPage({publicacion}) {
               </div>
             </section>
 
-      </main>)
+      </main>
+      </>
+      )
 
 }
 

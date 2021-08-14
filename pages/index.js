@@ -1,6 +1,7 @@
 import dynamic from 'next/dynamic'
 import {getPublicaciones, getArticulos, getPaisajeCentinela, getPresentaciones, getBasesDeDatos} from '../utils/contentful'
 import {motion} from 'framer-motion'
+import Head from 'next/head'
 import Link from 'next/link'
 import FeaturedBanner from '../components/featuredBanner/featuredBanner'
 import styles from '../styles/index.module.css'
@@ -28,7 +29,6 @@ export default function Inicio({publicaciones, articulos, presentaciones, paisaj
             </Link>
           </div>
         </section>
-
         <section className={styles.recrusosGrid}>
           <div className={styles.leftGrid}>
             <Header3>Artículos<Link href='/articulos'><span>Ver todas...</span></Link></Header3>

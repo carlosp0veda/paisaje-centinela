@@ -26,6 +26,7 @@ function layout({children}) {
         <>
         <Head>
             <title>Paisaje Centinela</title>
+            <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=6117600e030dfe00134038f2&product=sticky-share-buttons" async="async"></script>
         </Head>
         <div className={styles.container}>
          <Header clicked={toggleSideDrawerHandler}/>
