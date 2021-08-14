@@ -20,7 +20,6 @@ function ArticuloPage({articulo}) {
       <main>
         <CustomBreadcrumbs/>
         <Hero fotoURL={articulo[0].imagen?.url} width={articulo[0].imagen?.width} height={articulo[0].imagen?.height} date={articulo[0].sys.firstPublishedAt}>{articulo[0].titulo}</Hero>
-        <div class="sharethis-sticky-share-buttons"></div>
         <section className={styles.contenidoWrapper}>
           <div className={styles.publicador}>
             <p><strong>PUBLICADO POR: <Link href={`/investigadores/${articulo[0].publicador.slug}`}><a className={styles.link}>{articulo[0].publicador.nombre}</a></Link></strong></p>
