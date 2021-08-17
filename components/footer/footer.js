@@ -1,6 +1,8 @@
 import Script from 'next/script'
 import Link from 'next/link'
 import styles from './footer.module.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faCreativeCommons} from '@fortawesome/free-brands-svg-icons'
 
 const footer = () => {
     const date = new Date()
@@ -21,7 +23,7 @@ const footer = () => {
         </div>
 
         <div className={styles.lowerGrid}>
-            <p>&copy; {year} Paisaje Centinela Nicaragua-Honduras</p><p>Desarrollado por <Link href='https://www.linkedin.com/in/carlos-poveda-649a26127/'><a className={styles.profileLink}>Carlos Poveda</a></Link></p> 
+            <p>&copy; {year} Paisaje Centinela Nicaragua-Honduras</p><p><Link href='https://creativecommons.org/licenses/by/4.0/'><a target='_blank'><FontAwesomeIcon icon={faCreativeCommons} size='2x'/></a></Link></p> 
         </div>
         </footer>
         <Script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer/>
