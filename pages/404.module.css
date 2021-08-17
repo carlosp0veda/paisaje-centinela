@@ -1,0 +1,60 @@
+.errorPageWrapper {
+  display: grid;
+  position: relative;
+  grid-auto-rows: 1fr;
+  width: fit-content;
+  padding: 64px 0;
+  background-color: rgba(250,250,250,0.5);
+  
+}
+
+.body {
+  display: grid;
+  width: 100vw;
+  height: 100%;
+  flex-flow: column;
+  place-items: center;
+  align-content: center;
+  text-align: center;
+  background-color: transparent;
+  gap: 8px;
+  grid-template-rows: repeat(3,1fr) ;
+}
+
+.errorPageWrapper h1 {
+  color: firebrick;
+  font-size: 38px;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace;
+}
+
+.errorPageWrapper h1 span {
+  font-size: inherit;
+}
+
+.link {
+  text-decoration: underline;
+  background-color: var(--blue);
+  color: white;
+  font-size: 25px;
+  font-family: 'Georama', sans-serif;
+  text-align: center;
+  padding: 8px 16px;
+  border-radius:24px;
+  transform: scale(0.9);
+  transition: 0.1s ease-out all;
+}
+
+.link:hover {
+  background-color: var(--blue2);
+  transform: scale(1);
+}
+.link:active {
+  transform: scale(0.9);
+  background-color: var(--blue);
+  
+}
+
+.emoji {
+  font-size: 64px;
+}
