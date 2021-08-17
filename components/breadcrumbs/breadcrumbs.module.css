@@ -4,6 +4,8 @@
     margin-right: 32px;
     grid-auto-flow: column;
     list-style: none;
+    font-family: 'Georama', sans-serif;
+    font-size: 14px;
     
 }
 
@@ -22,13 +24,13 @@
     position: relative;
     align-items: center;
     justify-items: center;
-    text-decoration: underline;
     margin-right: 32px;
-    color:var(--blue2);
+    color:var(--blue);
 }
 
 .breadcrumbsInactive:hover{
-    color:var(--blue);
+    color:var(--green);
+    text-decoration: underline;
 }
 
 
@@ -48,6 +50,7 @@
 
 .breadcrumbsActive{
     cursor: default;
+    color: var(--green);
     pointer-events: none;
     
 }
