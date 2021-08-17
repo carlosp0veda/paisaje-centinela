@@ -18,7 +18,7 @@ const RecursosPage = ({publicaciones, presentaciones, bds}) => {
          <div className={styles.recursosGrid}>
             <Header3>Publicaciones<Link href='/recursos/publicaciones'><span>Ver todas...</span></Link></Header3>
             <div className={styles.publicaciones}>{
-            publicaciones.map((publicacion) => ( <Publicacion key={publicacion.sys.id} date={publicacion.aoDePublicacin} titulo={publicacion.titulo} pdfThumbnail={publicacion.fotoPdf?.url} url={`/recursos/publicaciones/${encodeURIComponent(publicacion.slug)}`} >{publicacion.resumen}</Publicacion>))
+            publicaciones.map((publicacion) => ( <Publicacion key={publicacion.sys.id} badge={publicacion.categoria} date={publicacion.aoDePublicacin} titulo={publicacion.titulo} pdfThumbnail={publicacion.fotoPdf?.url} url={`/recursos/publicaciones/${encodeURIComponent(publicacion.slug)}`} >{publicacion.resumen}</Publicacion>))
             }
             </div>
             <Header3>Presentaciones<Link href='/recursos/presentaciones'><span>Ver todas...</span></Link></Header3>

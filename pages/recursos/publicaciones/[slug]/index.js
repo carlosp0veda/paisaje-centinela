@@ -4,6 +4,7 @@ import styles from './publicacion.module.css'
 import CustomBreadcrumbs from '../../../../components/breadcrumbs/CustomBreadcrumbs'
 import Hero from '../../../../components/hero/hero'
 import Header4 from '../../../../components/UI/header4/header4'
+import Badge from '../../../../components/UI/badge/badge'
 import Pdf from '../../../../components/pdf/pdf'
 import Autor from '../../../../components/autor/autor'
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer'
@@ -40,7 +41,7 @@ function PublicacionPage({publicacion}) {
                 </div>
                 <div>
                   <Header4>Categoría</Header4>
-                  {publicacion[0].categoria?.map(c => <span className={styles.badge} key={c}>{c}</span>)}
+                  {publicacion[0].categoria?.map(c => <Badge key={c}>{c}</Badge>)}
                 </div>
               </div>
             </section>

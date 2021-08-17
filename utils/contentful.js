@@ -51,6 +51,7 @@ export const getPublicaciones = async () => {
         width
         height
       }
+      categoria
       aoDePublicacin
       sys {
         id
@@ -91,11 +92,6 @@ const query = gql`
       pdfCollection {
         items {
           url
-        }
-      }
-      contentfulMetadata {
-        tags {
-          name
         }
       }
       autoresCollection {

@@ -52,7 +52,7 @@ export default function Inicio({publicaciones, articulos, presentaciones, paisaj
           <div className={styles.rightGrid}>
             <Header3>Publicaciones<Link href='/recursos/publicaciones'><span>Ver todas...</span></Link></Header3>
             <div>
-            {publicaciones.map((publicacion) => ( <DynamicPublicacion key={publicacion.sys.id} date={publicacion.aoDePublicacin?.slice(0,4)} titulo={publicacion.titulo} pdfThumbnail={publicacion.fotoPdf?.url} url={`/recursos/publicaciones/${encodeURIComponent(publicacion.slug)}`} >{publicacion.resumen}</DynamicPublicacion>)
+            {publicaciones.map((publicacion) => ( <DynamicPublicacion key={publicacion.sys.id} badge={publicacion.categoria ?? publicacion.categoria } date={publicacion.aoDePublicacin?.slice(0,4)} titulo={publicacion.titulo} pdfThumbnail={publicacion.fotoPdf?.url} url={`/recursos/publicaciones/${encodeURIComponent(publicacion.slug)}`} >{publicacion.resumen}</DynamicPublicacion>)
             )}
             </div>
             <Header3>Presentaciones<Link href='/recursos/presentaciones'><span>Ver todas...</span></Link></Header3>
@@ -86,6 +86,6 @@ export const getStaticProps = async () => {
       bds: dataBD.basesDeDatosCollection.items.slice(0,3), 
       paisajeCentinela: dataPaisajeCentinela.paisajeCentinelaCollection.items
       },
-      revalidate: 300  
+      revalidate: 900  
     }
 }

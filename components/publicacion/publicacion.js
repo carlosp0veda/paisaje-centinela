@@ -1,6 +1,7 @@
 import styles from './publicacion.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
+import Badge from '../UI/badge/badge'
 
 const Publicacion = (props) => {
     return (
@@ -9,7 +10,7 @@ const Publicacion = (props) => {
                 <Image src={props.pdfThumbnail ?? "https://www.genius100visions.com/wp-content/uploads/2017/09/placeholder-vertical.jpg"} width={100} height={props.height ?? 150} alt={props.titulo}/>
             </div>
             <div className={styles.info}>
-            <p className={styles.date}>{props.date?.slice(0,4)}</p>
+            <p className={styles.date}>{props.date?.slice(0,4)} <Badge>{props.badge}</Badge></p>
             <Link href={props.url}>
         <a>
             <h2 className={styles.titulo}>{props.titulo}</h2>
