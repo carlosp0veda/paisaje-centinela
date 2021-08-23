@@ -9,11 +9,13 @@ const ArticulosPage = ({articulos}) => {
     return (
         <main>
             <CustomBreadcrumbs/>
-            <Header3>Artículos</Header3>
-            <div className={styles.cards}>
-                {articulos.map((articulo) => ( <Card key={articulo.sys.id} date={articulo.sys.firstPublishedAt} fotoURL={articulo.imagen?.url} width={articulo.imagen?.width} height={articulo.imagen?.height} url={`/articulos/${encodeURIComponent(articulo.slug)}`} >{articulo.titulo}</Card>)
-                )}
-            </div>
+            <section className={styles.cardsGrid}>
+                <Header3>Artículos</Header3>
+                <div className={styles.cards}>
+                    {articulos.map((articulo) => ( <Card key={articulo.sys.id} date={articulo.sys.firstPublishedAt} fotoURL={articulo.imagen?.url} width={articulo.imagen?.width} height={articulo.imagen?.height} url={`/articulos/${encodeURIComponent(articulo.slug)}`} >{articulo.titulo}</Card>)
+                    )}
+                </div>
+            </section>
         </main>
     )
 }
