@@ -9,7 +9,7 @@ module.exports = {
         source: '/(.*)',
         headers: [
           {
-            key: 'Access-Control-Allow-Origin:',
+            key: 'Access-Control-Allow-Origin',
             value: 'https://paisajecentinela.org',
           }
         ],
