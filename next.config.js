@@ -10,7 +10,7 @@ module.exports = {
         headers: [
           {
             key: 'Access-Control-Allow-Origin',
-            value: 'https://api.websitecarbon.com',
+            value: '*',
           }
         ],
       },
