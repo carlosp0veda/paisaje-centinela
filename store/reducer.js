@@ -26,8 +26,10 @@ const reducer = (state = initialState, action) => {
       return nextPage(state,action);
     case ACTIONS.PREV:
       return prevPage(state,action)
+    case ACTIONS.RESET:
+      return { ...state, currentPage: 1 };
     default:
-        state
+        return state
   }
 };
 

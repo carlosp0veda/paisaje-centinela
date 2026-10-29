@@ -1,35 +1,39 @@
 import {getInvestigadores} from '../../utils/contentful'
 import styles from './investigadores.module.css'
 import CustomBreadcrumbs from '../../components/breadcrumbs/CustomBreadcrumbs'
-import Header3 from '../../components/UI/header3/header3'
+import PageHeader from '../../components/pageHeader/pageHeader'
 import Image from 'next/image'
 import Link from 'next/link'
+import {imageOrNull} from '../../utils/image'
 
 
 export default function Investigadores({investigadores}) {
-    const staff = investigadores.filter(investigador => {
-      if (investigador.staffPrimario) {
-        return investigador
-      }
-    })
+    const staff = investigadores.filter(investigador => investigador.staffPrimario)
     return (
         <main>
         <CustomBreadcrumbs/>
-        <Header3>Colaboradores</Header3>
-        <div className={styles.investigadoresGrid}>
-        {staff.map(investigador => (
-          <div key={investigador.sys.id} className={styles.investigadorCard}>
-            <div className={styles.fotoWrapper}>
-              <Image src={investigador.foto?.url} layout='fill' />
-            </div>
-            <Link href={`/investigadores/${investigador.slug}`}>
-            <a>{investigador.nombre}</a>
-            </Link>
-            <p>{investigador.organizacion}</p>
-            <p>{investigador.rol}</p>
+        <PageHeader eyebrow="equipo" titulo="Colaboradores" count={staff.length} descripcion="Personas e instituciones que investigan y trabajan en el Paisaje Centinela Nicaragua-Honduras."/>
+        <section className="container page-body">
+          <div className={styles.investigadoresGrid}>
+          {staff.map(investigador => {
+            const foto = imageOrNull(investigador.foto?.url)
+            return (
+              <article key={investigador.sys.id} className={styles.investigadorCard}>
+                <div className={styles.fotoWrapper}>
+                  {foto
+                    ? <Image src={foto} layout='fill' objectFit='cover' alt=''/>
+                    : <span aria-hidden="true">{investigador.nombre?.charAt(0)}</span>}
+                </div>
+                <Link href={`/investigadores/${investigador.slug}`}>
+                  <a className={styles.nombre}>{investigador.nombre}</a>
+                </Link>
+                {investigador.organizacion && <p className={styles.organizacion}>{investigador.organizacion}</p>}
+                {investigador.rol && <p className={styles.rol}>{investigador.rol}</p>}
+              </article>
+            )
+          })}
           </div>
-        ))}
-        </div>
+        </section>
         </main>
     )
 }
@@ -37,7 +41,7 @@ export default function Investigadores({investigadores}) {
 
 export const getStaticProps = async () => {
 
-  
+
 
   const data = await getInvestigadores()
 

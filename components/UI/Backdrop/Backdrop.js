@@ -7,7 +7,7 @@ function Backdrop(props) {
       document.body.style.overflow = "hidden";
     }
     return function cleanup() {
-      document.body.style.overflow = "visible";
+      document.body.style.overflow = "";
     };
   }, [props.show]);
 

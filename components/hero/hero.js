@@ -1,20 +1,26 @@
 import styles from './hero.module.css'
 import Image from 'next/image'
+import {imageOrNull} from '../../utils/image'
 
 
 const Hero = (props) => {
-    return ( 
-        <div className={styles.CardStyle}>  
-            <div className={styles.HeroWrapper}>
-                <Image className={styles.HeroImage} src={props.fotoURL ?? "https://i.stack.imgur.com/y9DpT.jpg"}  layout='fill' objectFit='cover'/>
-                <div className={styles.Copy}>
-                    <h2 className={styles.titulo}>{props.children}</h2>
-                    {props.date ? <p className={styles.date}>{props.date.slice(0,10)}</p> : null}
-                </div>
-            
-                
-            </div>   
-        </div>
+    const foto = imageOrNull(props.fotoURL)
+    return (
+        <section className={styles.HeroWrapper}>
+            {foto && <Image className={styles.HeroImage} src={foto} layout='fill' objectFit='cover' priority alt=''/>}
+            <div className={styles.overlay} aria-hidden="true"></div>
+            <div className={['container', styles.Copy, props.narrow ? styles.narrow : '', props.overlap ? styles.overlap : ''].join(' ')}>
+                {props.eyebrow && <p className={styles.eyebrow}>{props.eyebrow}</p>}
+                <h1 className={styles.titulo}>{props.children}</h1>
+                {(props.date || props.meta) && (
+                    <p className={styles.date}>
+                        {props.date && <time dateTime={props.date}>{props.date.slice(0,10)}</time>}
+                        {props.date && props.meta && <span aria-hidden="true"> · </span>}
+                        {props.meta}
+                    </p>
+                )}
+            </div>
+        </section>
     )
 }
 

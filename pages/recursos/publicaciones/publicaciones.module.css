@@ -1,18 +1,120 @@
-.publicaciones{
+.publicaciones {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(352px, 1fr));
-  justify-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 8px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background-color: var(--surface);
+}
+
+@media screen and (max-width: 420px) {
+  .publicaciones {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Búsqueda y filtros */
+.filtros {
+  display: flex;
+  flex-flow: column;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.buscador {
+  position: relative;
+  display: block;
+  max-width: 560px;
+}
+
+.buscador input {
+  width: 100%;
+  padding: 12px 14px 12px 42px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background-color: var(--paper);
+  font: inherit;
+  font-size: 16px;
+  color: var(--ink);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.buscador input:focus {
+  outline: none;
+  border-color: var(--green);
+  background-color: var(--surface);
+  box-shadow: 0 0 0 3px var(--green-tint);
+}
+
+.buscadorIcon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px !important;
+  color: var(--muted);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
   gap: 8px;
 }
 
-.publicacionesGrid{
-  padding:0 32px; 
-  background-color: rgba(255, 255, 255,0.8)
+.chip {
+  flex-shrink: 0;
+  padding: 6px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background-color: var(--surface);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--green2);
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
 }
 
-@media screen and (max-width:768px) {
-  .publicacionesGrid{
-  padding:0; 
+.chip:hover {
+  border-color: var(--green);
 }
 
+.chipActive {
+  border-color: var(--green2);
+  background-color: var(--green2);
+  color: #fff;
+}
+
+.resultados {
+  margin-bottom: 12px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.vacio {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 32px;
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  background-color: var(--surface);
+  color: var(--muted);
+}
+
+@media screen and (max-width: 768px) {
+  /* Fila de categorías desplazable en móvil */
+  .chips {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin: 0 calc(var(--gutter) * -1);
+    padding: 2px var(--gutter) 6px;
+    scrollbar-width: none;
+  }
+
+  .chips::-webkit-scrollbar {
+    display: none;
+  }
 }

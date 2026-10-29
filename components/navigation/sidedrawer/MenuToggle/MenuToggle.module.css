@@ -1,24 +1,27 @@
 .MenuToggle {
-  width: 40px;
-  height: 100%;
-  display: flex;
+  display: none;
+  width: 44px;
+  height: 44px;
   flex-flow: column;
   justify-content: center;
-  align-items: flex-end;
-  padding: 10px 0;
-  box-sizing: border-box;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background-color: var(--surface);
   cursor: pointer;
 }
 
-.MenuToggle div {
-  width: 90%;
-  height: 3px;
-  margin: 4px 0;
+.MenuToggle span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 2px;
   background-color: var(--blue);
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
   .MenuToggle {
-    display: none;
+    display: flex;
   }
 }

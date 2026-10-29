@@ -1,63 +1,78 @@
 .SideDrawer {
   position: fixed;
-  width: 280px;
-  max-width: 70%;
+  display: flex;
+  flex-flow: column;
+  width: 300px;
+  max-width: 84%;
   height: 100%;
   right: 0;
   top: 0;
   z-index: 999;
-   background: linear-gradient(to right, #ece9e6, #ffffff);
-  padding: 2rem 1rem;
-  box-sizing: border-box;
+  padding: 28px 24px;
+  background-color: var(--surface);
+  background-image: var(--topo);
+  background-size: 480px;
+  box-shadow: var(--shadow-md);
   transition: transform 0.3s ease-out;
 }
 
-.logo h2 {
-  font-size: 28px;
-  font-family: 'Major Mono Display', monospace;
+.logo {
+  display: block;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.wordmark {
+  display: block;
+  font-family: var(--font-brand);
+  font-size: 24px;
+  line-height: 1.1;
   color: var(--green);
 }
 
-.nicaraguahonduras{
-  font-size: 16px;
-  padding-top: 8px;
+.nicaraguahonduras {
+  display: block;
+  padding-top: 6px;
+  font-family: var(--font-brand);
+  font-size: 13px;
   color: var(--blue);
-  font-family: 'Major Mono Display', monospace;
 }
 
 .list {
   list-style: none;
-  padding-top: 32px;
+  padding-top: 16px;
   display: flex;
   flex-flow: column;
-  gap: 16px;
-  align-items: flex-end;
-}
-
-.listItem{
-  align-items: flex-end;
 }
 
 .listLink {
   display: block;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-ui);
+  font-size: 20px;
+  font-weight: 500;
   color: var(--blue);
-  font-size: 24px;
-  text-align: end;
-  font-family: 'Georama', sans-serif;
+  transition: color 0.2s ease, padding 0.2s ease;
 }
 
-.listLink:hover {
-  transform: translateX(-16px);
-  transition: .2s ease-in-out;
+.listLink:hover,
+.listLink:focus-visible {
   color: var(--green);
+  padding-left: 8px;
 }
 
-.listLink:focus {
-  color: var(--green);
+.active {
+  color: var(--green2);
+  box-shadow: inset 3px 0 0 var(--green);
+  padding-left: 12px;
 }
 
-
-
+.partner {
+  display: block;
+  width: 120px;
+  margin-top: auto;
+}
 
 @media screen and (min-width: 769px) {
   .SideDrawer {
@@ -70,6 +85,5 @@
 }
 
 .Close {
-  transform: translateX(100%);
+  transform: translateX(105%);
 }
-

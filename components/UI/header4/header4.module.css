@@ -1,20 +1,12 @@
-.headers{
-    width: 100%;
-  padding: 32px 0;
-  position: relative;
-  font-size: 18px;
-  padding-left: 2%;
-  font-family: 'Georama';
-  color: var(--blue);
-
-}
-
-.headers::after{
-  content: '';
-  position: absolute;
-  bottom: 16px;
-  left: 2%;
-  width: 92%;
-  height: 2px;
-  background-color: rgb(180, 180, 180);
+.headers {
+  width: 100%;
+  margin: 24px 0 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
 }

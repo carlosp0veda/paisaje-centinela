@@ -1,41 +1,65 @@
 .HeroWrapper {
     position: relative;
-    background-color: black;
-    width: 100vw;
-    height: 350px;
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+    min-height: clamp(260px, 42vh, 420px);
+    overflow: hidden;
+    background-color: var(--green2);
+    background-image: var(--topo);
+    background-blend-mode: soft-light;
 }
 
-.HeroImage {
-    opacity: 0.6;
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(20, 30, 17, 0.88) 0%, rgba(20, 30, 17, 0.45) 45%, rgba(20, 30, 17, 0.1) 100%);
 }
-
 
 .Copy {
-    width: min(768px, 90vw );
-    padding: 16px;
-    position: absolute;
-    background-color: rgba(240, 240, 240, 0.3);
-    color: white;
+    position: relative;
     z-index: 1;
-    bottom: 32px;
-    left: 5vw;
-    font-family: 'Roboto', sans-serif;
+    padding-top: 48px;
+    padding-bottom: 40px;
+    color: #fff;
 }
 
-.Copy h2 {
-    font-size: 28px;
-    font-weight: 700;
-    padding-bottom: 16px;
+/* Alinea el título con una columna de lectura centrada */
+.Copy.narrow {
+    max-width: calc(820px + var(--gutter) * 2);
 }
 
-.Copy p {
-    font-family: 'Cutive Mono', monospace;
-    font-size: 16px;
+/* Deja espacio para un bloque de contenido que se superpone al hero */
+.Copy.overlap {
+    padding-bottom: calc(var(--hero-overlap, 56px) + 40px);
 }
 
-@media screen and (max-width:768px)  {
+.eyebrow {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--green2);
+    background-color: #b9dbac;
+}
 
-    .Copy h2 {
-        font-size: 20px;
-    }    
+.titulo {
+    max-width: 880px;
+    font-family: var(--font-ui);
+    font-size: clamp(26px, 4vw, 44px);
+    font-weight: 600;
+    line-height: 1.15;
+    text-wrap: balance;
+}
+
+.date {
+    display: inline-block;
+    margin-top: 14px;
+    font-family: var(--font-mono);
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.82);
 }

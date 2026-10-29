@@ -1,16 +1,19 @@
 import styles from './autor.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
+import {imageOrNull} from '../../utils/image'
 
 const Autor = ({nombre, url, foto}) => {
-    
+    const src = imageOrNull(foto?.url)
     return (
         <div className={styles.autorWrapper}>
-            <Image src={foto.url} width={50} height={50}/>
+            <div className={styles.avatar}>
+                {src
+                    ? <Image src={src} layout='fill' objectFit='cover' alt=''/>
+                    : <span aria-hidden="true">{nombre?.charAt(0)}</span>}
+            </div>
             <Link href={url}>
-                <a className={styles.nombre}>
-                {nombre}
-                </a>
+                <a className={styles.nombre}>{nombre}</a>
             </Link>
         </div>
     )

@@ -1,84 +1,83 @@
-.breadcrumbsWrapper {
-    width: auto;
-    height: auto;
-    background-color: rgb(245, 244, 244);
-    padding: 16px 4px;
-    margin: 16px 0;
+.body {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr) 260px;
+    gap: clamp(24px, 3vw, 48px);
+    align-items: start;
+    padding-top: 40px;
 }
 
-.body{
-    display: grid;
-    grid-template-columns: 15% auto 25%;
-    justify-content: center;
-    background-color: rgba(255, 255, 255,0.8);
+.leftPanel {
+    position: sticky;
+    top: calc(var(--header-h) + 24px);
 }
 
 .resumen {
-    display: grid;
-    max-width: 560px;
-    padding: 16px 32px;
-    font-family: 'Cormorant Garamond', serif;
+    padding: clamp(24px, 3vw, 40px);
+    padding-top: 8px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background-color: var(--surface);
+    font-family: var(--font-read);
     font-size: 20px;
-    text-align: justify;
+    line-height: 1.65;
+}
+
+.resumen p {
+    margin-bottom: 1.1em;
+}
+
+.resumen p:last-child {
+    margin-bottom: 0;
 }
 
 .rightPanel {
-    padding: 16px;
+    display: flex;
+    flex-flow: column;
+    gap: 8px;
 }
 
-.autoresGrid{
-    max-width: 350px;
-}
-
-.autoresTitle {
-    font-family: 'Cutive Mono';
-    padding-bottom: 32px;
-    padding-left: 5%;
-    position: relative;
-}
-
-.autoresTitle::after{
-    content: '';
-    position: absolute;
-    bottom: 16px;
-    left: 5%;
-    width: 85%;
-    height: 2px;
-    background-color: #ccc;
+.rightPanel > div > h4:first-child {
+    margin-top: 0;
 }
 
 .autores {
     display: flex;
-    padding:16px 0;
     flex-flow: column;
-    background-color: rgba(240, 240, 240, 0.3);
-    gap: 16px;
+    gap: 4px;
+    margin: 0 -8px 16px;
 }
 
-.badge{
-    width: auto;
-    height: auto;
-    color: white;
-    padding:4px 8px;
-    border-radius: 24px;
-    background-color: rgb(120, 120, 120);
+.badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+@media screen and (max-width: 1024px) {
+    .body {
+        grid-template-columns: 200px minmax(0, 1fr);
+    }
+
+    .rightPanel {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 24px;
+    }
 }
 
 @media screen and (max-width: 768px) {
-  .body{
-    grid-template-columns: 100vw;
-    grid-template-rows: repeat(3, auto);
-    justify-items: center;
-    gap: 16px;
-}
+    .body {
+        grid-template-columns: minmax(0, 1fr);
+        padding-top: 24px;
+    }
 
-.resumen{
-    order: -2;
-    font-size: 18px;
-} 
+    .leftPanel {
+        position: static;
+    }
 
-.rightPanel {
-    order: -1;
-}
-
+    .resumen {
+        order: -1;
+        font-size: 18px;
+    }
 }

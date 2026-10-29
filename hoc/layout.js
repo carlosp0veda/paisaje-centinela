@@ -28,7 +28,7 @@ function layout({children}) {
             <title>Paisaje Centinela</title>
         </Head>
         <div className={styles.container}>
-         <Header clicked={toggleSideDrawerHandler}/>
+         <Header clicked={toggleSideDrawerHandler} open={sideDrawer.showSideDrawer}/>
          <SideDrawer  open={sideDrawer.showSideDrawer} closed={sideDrawerCloseHandler}/>
          {children}
          <Footer/>

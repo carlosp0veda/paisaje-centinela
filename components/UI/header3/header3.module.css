@@ -1,30 +1,54 @@
-.h3{
-    width: 100%;
-  padding: 32px 0;
+.h3 {
   position: relative;
-  font-size: 28px;
-  padding-left: 2%;
-  font-family: 'Georama';
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  margin: 40px 0 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-ui);
+  font-size: clamp(22px, 2.4vw, 28px);
+  font-weight: 600;
+  line-height: 1.2;
   color: var(--blue);
-
 }
 
-.h3 span{
-    position: absolute;
-    right: 2%;
-    bottom: 32px;
-    font-size: 16px;
-    color: rgb(120, 120, 120);
-    cursor: pointer;
-
-}
-
-.h3::after{
+.h3::after {
   content: '';
   position: absolute;
-  bottom: 16px;
-  left: 2%;
-  width: 96%;
-  height: 2px;
-  background-color: rgb(180, 180, 180);
+  left: 0;
+  bottom: -2px;
+  width: 48px;
+  height: 3px;
+  border-radius: 3px;
+  background-color: var(--green);
+}
+
+.h3 a,
+.h3 span {
+  flex-shrink: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--green);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.h3 a::after,
+.h3 span::after {
+  content: ' →';
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.h3 a:hover,
+.h3 span:hover {
+  color: var(--green2);
+}
+
+.h3 a:hover::after,
+.h3 span:hover::after {
+  transform: translateX(3px);
 }

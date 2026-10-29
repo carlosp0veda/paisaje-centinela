@@ -1,43 +1,33 @@
 import styles from './featuredBanner.module.css'
 import Image from 'next/image'
 import Link from 'next/link'
+import {imageOrNull} from '../../utils/image'
+
+const POSITIONS = [styles.postFirst, styles.postSecond, styles.postThird]
 
 const FeaturedBanner = ({featuredPosts}) => {
     return (
-        <section className={styles.bannerWrapper}>
-            <div className={styles.bannerGrid}>
-                <article className={styles.postFirst} > 
-                <div className={styles.imageWrapper}>
-                    <Image src={featuredPosts[0].imagen?.url} priority layout='fill' objectFit="cover" />
-                </div> 
-                    <Link className={styles.link} key={featuredPosts[0].titulo} href={`/articulos/${featuredPosts[0].slug}`}>
-                            <a>
-                                <h2 className={styles.titulo}>{featuredPosts[0].titulo}</h2>
-                            </a>
-                    </Link>                
-                </article>
-
-                <article className={styles.postSecond} > 
-                <div className={styles.imageWrapper}>
-                    <Image src={featuredPosts[1].imagen?.url} priority layout='fill' objectFit="cover"/>
-                </div>  
-                    <Link className={styles.link} key={featuredPosts[1].titulo} href={`/articulos/${featuredPosts[1].slug}`}>
-                        <a>
-                            <h2 className={styles.titulo}>{featuredPosts[1].titulo}</h2>
-                        </a>
-                    </Link>
-                </article>
-
-                <article className={styles.postThird}>  
-                    <div className={styles.imageWrapper}>
-                    <Image src={featuredPosts[2].imagen?.url} priority layout='fill' objectFit="cover"/>
-                </div>  
-                    <Link className={styles.link} key={featuredPosts[2].titulo} href={`/articulos/${featuredPosts[2].slug}`}>
-                        <a>
-                            <h2 className={styles.titulo}>{featuredPosts[2].titulo}</h2>
-                        </a>
-                    </Link>
-                </article>
+        <section className={styles.bannerWrapper} aria-label="Artículos destacados">
+            <div className={`container ${styles.bannerGrid}`}>
+                {featuredPosts.slice(0, 3).map((post, i) => {
+                    const foto = imageOrNull(post.imagen?.url)
+                    return (
+                        <article key={post.slug} className={[styles.post, POSITIONS[i]].join(' ')}>
+                            <div className={styles.imageWrapper}>
+                                {foto && <Image src={foto} priority layout='fill' objectFit="cover" alt=''/>}
+                            </div>
+                            <div className={styles.copy}>
+                                {i === 0 && <p className={styles.eyebrow}>Destacado</p>}
+                                <Link href={`/articulos/${post.slug}`}>
+                                    <a className={styles.link}>
+                                        <h2 className={styles.titulo}>{post.titulo}</h2>
+                                    </a>
+                                </Link>
+                                {post.sys?.firstPublishedAt && <time className={styles.date} dateTime={post.sys.firstPublishedAt}>{post.sys.firstPublishedAt.slice(0,10)}</time>}
+                            </div>
+                        </article>
+                    )
+                })}
             </div>
         </section>
     )

@@ -1,44 +1,66 @@
 .CardStyle {
-  display: grid;
-  grid-template-rows: auto auto auto;
-  justify-content: space-around;
   position: relative;
-  background-color: rgb(240, 240, 255);
-  width: 320px;
-  height: 375px;
-  padding-bottom: 16px;
-  border: 1px solid var(--blue);
-  box-shadow: 0 1px 3px rgba(0, 0, 45, 0.12), 0 1px 2px rgba(0, 0, 45, 0.24);
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background-color: var(--surface);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 
-.CardStyle:hover {
-  box-shadow: 0 14px 28px rgba(0, 0, 90, 0.25), 0 10px 10px rgba(0, 0, 90, 0.22);
-}
-
-.titulo {
-  color: var(--green);
-  width: 92%;
-  font-size: 16px;
-  justify-self: center;
-  font-family: 'Georama', sans-serif;
-}
-
-.titulo:hover {
-  color: var(--green2);
-}
-
-.date {
-  font-size: 14px;
-  color: rgba(180, 180, 180);
-  padding-left: 4%;
-  text-align: start;
+.CardStyle:hover,
+.CardStyle:focus-within {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
 }
 
 .ImageWrapper {
-  display: block;
   position: relative;
-  text-align: start;
   width: 100%;
-  height: 200px;
+  aspect-ratio: 16 / 10;
+  background-color: var(--surface-alt);
+}
+
+.placeholder {
+  position: absolute;
+  inset: 0;
+  background-color: var(--green-tint);
+  background-image: var(--topo);
+  background-size: 300px;
+}
+
+.body {
+  display: flex;
+  flex-flow: column;
+  gap: 8px;
+  padding: 16px 18px 20px;
+}
+
+.date {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.titulo {
+  font-family: var(--font-ui);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--green2);
+  transition: color 0.2s ease;
+}
+
+/* Toda la tarjeta es clicable */
+.titulo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.CardStyle:hover .titulo {
+  color: var(--green);
 }

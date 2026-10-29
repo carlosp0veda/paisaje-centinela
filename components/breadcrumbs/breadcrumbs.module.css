@@ -1,80 +1,56 @@
+.breadcrumbsBar {
+    width: 100%;
+    background-color: var(--surface);
+    border-bottom: 1px solid var(--line);
+}
+
+.breadcrumbsContainer {
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    overflow-x: auto;
+}
+
 .breadcrumbsList {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(auto, 1fr));
-    margin-right: 32px;
-    grid-auto-flow: column;
+    display: flex;
+    align-items: center;
+    gap: 0;
     list-style: none;
-    font-family: 'Georama', sans-serif;
-    font-size: 14px;
-    
+    font-family: var(--font-ui);
+    font-size: 13px;
+    white-space: nowrap;
 }
 
-.breadcrumbsContainer{
-    width: 100vw;
-    height: 64px;
-    padding-left: 16px;
+.breadcrumbsInactive {
     display: flex;
     align-items: center;
-    background-color: #fff;
+    color: var(--blue);
 }
 
-.breadcrumbsInactive{
-    display: flex;
-    max-width: 396px;
-    position: relative;
-    align-items: center;
-    justify-items: center;
-    margin-right: 32px;
-    color:var(--blue);
-}
-
-.breadcrumbsInactive:hover{
-    color:var(--green);
-    text-decoration: underline;
-}
-
-
-.breadcrumbsInactive::after{
-    content: '    ';
-    position: absolute;
-    top: 50%;
-    right: -8px;
-    width: 5px;
-    height: 5px;
-    border-top: 2px solid var(--blue2);
-    border-right: 2px solid var(--blue2);
-    text-decoration: none;
-    transform: translateX(8px) translateY(-25%) rotateZ(45deg);
-    
-}
-
-.breadcrumbsActive{
-    cursor: default;
+.breadcrumbsInactive a:hover {
     color: var(--green);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.breadcrumbsInactive::after {
+    content: '/';
+    padding: 0 10px;
+    color: var(--line);
+    font-weight: 600;
+}
+
+.breadcrumbsActive {
+    max-width: 48ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--muted);
+    cursor: default;
     pointer-events: none;
-    
 }
 
 @media screen and (max-width: 768px) {
-  .breadcrumbsActive{
-      display: none;
-  }
-
-  .breadcrumbsInactive::after{
-    content: '    ';
-    position: absolute;
-    top: 50%;
-    right: -8px;
-    width: 5px;
-    height: 5px;
-    
-    border-top: 2px solid var(--blue2);
-    border-right: none;
-    border-left: 2px solid var(--blue2);
-    text-decoration: none;
-    transform: translateX(8px) translateY(-25%) rotateZ(-45deg);
-    
-}
-
-
+    .breadcrumbsActive {
+        max-width: 24ch;
+    }
 }

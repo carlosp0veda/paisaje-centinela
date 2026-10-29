@@ -1,54 +1,76 @@
-.presentacion{
-    display: grid;
+.presentacion {
     position: relative;
-    margin-bottom: 32px;
-    padding: 0 8px;
-    min-width: 352px;
-    height: 128px;
+    display: grid;
+    grid-template-columns: 136px 1fr;
+    gap: 16px;
+    align-items: center;
+    padding: 16px;
+    border-radius: var(--radius);
+    transition: background-color 0.2s ease;
+}
+
+.presentacion:hover,
+.presentacion:focus-within {
+    background-color: var(--surface-alt);
+}
+
+.imageWrapper {
+    position: relative;
+    display: grid;
     place-items: center;
-    grid-template-columns: minmax(120px, 144px) minmax(auto, 256px);
-    grid-template-rows: 128px;
+    width: 136px;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    background-color: var(--surface-alt);
+    box-shadow: var(--shadow-sm);
 }
 
-.presentacion::after{
-    content: '';
-    position: absolute;
-    bottom: -16px;
-    width: 100%;
-    height: 1px;
-    background-color: rgb(180, 180, 180)
-}
-
-.imageWrapper{
-    width: fit-content;
-    height: fit-content;
-    display: flex;
-    box-shadow:0 1px 3px rgba(0, 0, 45, 0.12), 0 1px 2px rgba(0, 0, 45, 0.24) ;
-}
-
-.imageWrapper img{
-    display: block;
+.placeholderIcon {
+    width: 28px !important;
+    height: 28px;
+    color: var(--blue);
+    opacity: 0.6;
 }
 
 .info {
     display: flex;
     flex-flow: column;
-    justify-content: space-evenly;
-    padding-left: 16px;
+    gap: 6px;
+    min-width: 0;
 }
 
-.titulo{
-    font-size: 16px;
-    font-family: 'Georama', sans-serif;
-    color: var(--green);
+.date {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--muted);
 }
 
-.info h2:hover{
+.titulo {
+    font-family: var(--font-ui);
     font-size: 16px;
+    font-weight: 600;
+    line-height: 1.35;
     color: var(--green2);
 }
 
-.info p{
-    color: gray;
+.titulo::after {
+    content: '';
+    position: absolute;
+    inset: 0;
 }
 
+.presentacion:hover .titulo {
+    color: var(--green);
+}
+
+@media screen and (max-width: 420px) {
+    .presentacion {
+        grid-template-columns: 104px 1fr;
+    }
+
+    .imageWrapper {
+        width: 104px;
+    }
+}

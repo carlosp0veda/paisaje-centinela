@@ -1,53 +1,11 @@
-.contentWrapper{
-    height: 100%;
-    background-color: rgba(255, 255, 255,0.8)
-}
-
-.files{
+.files {
     display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
     gap: 16px;
-    place-items: center;
-    padding: 32px 0;
 }
 
-.file{
-    display: flex;
-    width: 90%;
-    height: auto;
-    padding: 16px 0;
-    justify-content: center;
-    border-top: 2px solid var(--blue);
-    border-bottom: 2px solid var(--blue);
-}
-
-.fileInfo{
-    min-width:320px;
-    display: grid;
-    gap: 16px;
-    place-items: center;
-}
-
-.fileInfo h4{
-    font-size: 22px;
-    color: var(--green);
-    text-align: center;
-    font-family: 'Georama', sans-serif;
-}
-
-.fileInfo p{
-    font-size: 16px;
-    color: var(--blue);
-     text-align: justify;
-     font-family: 'Roboto', sans-serif;
-}
-
-
-.downloadLink{
-    color: var(--blue2);
-    text-decoration: underline;
-    font-family: 'Georama', sans-serif;
-}
-
-.downloadLink:hover{
-    color: var(--blue);
+@media screen and (max-width: 420px) {
+    .files {
+        grid-template-columns: minmax(0, 1fr);
+    }
 }

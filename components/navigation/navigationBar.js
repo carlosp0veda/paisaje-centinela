@@ -1,15 +1,23 @@
 import Link from 'next/link'
+import {useRouter} from 'next/router'
 import styles from './navigationBar.module.css'
+import {NAV_LINKS, isActive} from './navLinks'
 
 const NavigationBar = () => {
+    const {pathname} = useRouter()
     return (
-        <nav className={styles.navigation}>
+        <nav className={styles.navigation} aria-label="Principal">
             <ul className={styles.navigationList}>
-                <li className={styles.one}><Link href='/acerca'><a className={[styles.navigationLink, styles.oneLink].join(' ')}>Paisaje Centinela</a></Link></li>
-                <li className={styles.two}><Link href='/articulos'><a className={styles.navigationLink}>Artículos</a></Link></li>
-                <li className={styles.three}><Link href='/recursos'><a className={styles.navigationLink}>Recursos</a></Link></li>
-                <li className={styles.four}><Link href='/investigadores'><a className={styles.navigationLink}>Equipo</a></Link></li>
-                <hr className={styles.hr}/>
+                {NAV_LINKS.map(link => {
+                    const active = isActive(pathname, link.href)
+                    return (
+                        <li key={link.href}>
+                            <Link href={link.href}>
+                                <a className={[styles.navigationLink, active ? styles.active : ''].join(' ')} aria-current={active ? 'page' : undefined}>{link.label}</a>
+                            </Link>
+                        </li>
+                    )
+                })}
             </ul>
         </nav>
     )

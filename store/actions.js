@@ -1,4 +1,5 @@
 export const ACTIONS = {
   NEXT: 'next',
-  PREV: 'prev'
+  PREV: 'prev',
+  RESET: 'reset'
 }

@@ -1,42 +1,71 @@
-.investigadoresGrid{
+.investigadoresGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    justify-items: center;
-    margin:0 16px;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 24px;
 }
 
-.investigadorCard{
-    width: 250px;
+.investigadorCard {
+    position: relative;
     display: flex;
     flex-flow: column;
     align-items: center;
-    margin:16px;
-    padding: 32px 0;
-    background-color: rgba(140, 140, 140, 0.3);
-
-}
-
-.investigadorCard p{
-   text-align: center;
-   padding: 8px;
-   color: rgb(100, 100, 100);  
-}
-
-
-.investigadorCard a{
-    color: var(--blue);
-    font-size: 22px;
+    gap: 6px;
+    padding: 28px 20px 24px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background-color: var(--surface);
     text-align: center;
-    padding: 8px 0;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 
-.investigadorCard a:hover{
-    color: var(--blue2);
-
+.investigadorCard:hover,
+.investigadorCard:focus-within {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
 }
 
-.fotoWrapper{
+.fotoWrapper {
     position: relative;
-    width: 200px;
-    height: 200px;
+    display: grid;
+    place-items: center;
+    width: 128px;
+    height: 128px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 3px solid var(--green-tint);
+    background-color: var(--green-tint);
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--green2);
+}
+
+.nombre {
+    font-family: var(--font-ui);
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--blue);
+}
+
+.nombre::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+}
+
+.investigadorCard:hover .nombre {
+    color: var(--blue2);
+}
+
+.organizacion {
+    font-size: 14px;
+    color: var(--green2);
+}
+
+.rol {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--muted);
 }

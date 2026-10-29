@@ -2,10 +2,11 @@ import Link from 'next/link'
 import styles from './404.module.css'
 
 export default function ServerErrorPage() {
-  return <main className={styles.errorPageWrapper}>  
-        <div className={styles.body}>
-        <h1>505 - Hubo un error con el servidor</h1>
-        <p><span className={styles.emoji}>&#128680; </span ><span className={styles.emoji}>&#128679; </span ><span className={styles.emoji}>&#128680; </span ></p>
+  return <main className={styles.errorPageWrapper}>
+        <div className={`container ${styles.body}`}>
+        <p className={styles.code}>500</p>
+        <h1>Hubo un error con el servidor</h1>
+        <p className={styles.text}>Intenta de nuevo en unos minutos.</p>
         <Link href="/">
           <a className={styles.link}>
             Ir a Inicio
