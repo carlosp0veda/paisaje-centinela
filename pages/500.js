@@ -7,10 +7,8 @@ export default function ServerErrorPage() {
         <p className={styles.code}>500</p>
         <h1>Hubo un error con el servidor</h1>
         <p className={styles.text}>Intenta de nuevo en unos minutos.</p>
-        <Link href="/">
-          <a className={styles.link}>
-            Ir a Inicio
-          </a>
+        <Link href="/" className={styles.link}>
+          Ir a Inicio
         </Link>
         </div>
   </main>

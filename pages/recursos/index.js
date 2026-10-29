@@ -26,31 +26,29 @@ const RecursosPage = ({publicaciones, presentaciones, bds, totales}) => {
         <PageHeader eyebrow="biblioteca" titulo="Recursos" descripcion="Publicaciones, presentaciones y bases de datos generadas en el Paisaje Centinela, disponibles para consulta y descarga.">
             <nav className={styles.categorias} aria-label="Tipos de recurso">
                 {categorias.map(c => (
-                    <Link key={c.href} href={c.href}>
-                        <a className={styles.categoria}>
-                            <span className={styles.categoriaIcon}><FontAwesomeIcon icon={c.icon}/></span>
-                            <span className={styles.categoriaText}>
-                                <strong>{c.titulo}</strong>
-                                <span>{c.descripcion}</span>
-                            </span>
-                            <span className={styles.categoriaTotal}>{c.total}</span>
-                        </a>
+                    <Link key={c.href} href={c.href} className={styles.categoria}>
+                        <span className={styles.categoriaIcon}><FontAwesomeIcon icon={c.icon}/></span>
+                        <span className={styles.categoriaText}>
+                            <strong>{c.titulo}</strong>
+                            <span>{c.descripcion}</span>
+                        </span>
+                        <span className={styles.categoriaTotal}>{c.total}</span>
                     </Link>
                 ))}
             </nav>
         </PageHeader>
          <div className="container page-body">
-            <Header3>Publicaciones recientes<Link href='/recursos/publicaciones'><a>Ver todas</a></Link></Header3>
+            <Header3>Publicaciones recientes<Link href='/recursos/publicaciones'>Ver todas</Link></Header3>
             <div className={styles.publicaciones}>{
             publicaciones.map((publicacion) => ( <Publicacion key={publicacion.sys.id} badge={publicacion.categoria} date={publicacion.aoDePublicacin} titulo={publicacion.titulo} pdfThumbnail={publicacion.fotoPdf?.url} url={`/recursos/publicaciones/${encodeURIComponent(publicacion.slug)}`} >{publicacion.resumen}</Publicacion>))
             }
             </div>
-            <Header3>Presentaciones<Link href='/recursos/presentaciones'><a>Ver todas</a></Link></Header3>
+            <Header3>Presentaciones<Link href='/recursos/presentaciones'>Ver todas</Link></Header3>
             <div className={styles.presentaciones}>{
             presentaciones.map((presentacion) => ( <Presentacion key={presentacion.sys.id} date={presentacion.sys.firstPublishedAt} titulo={presentacion.tituloDePresentacion} pdfThumbnail={presentacion.capturaPortada?.url} url={`/recursos/presentaciones/${encodeURIComponent(presentacion.slug)}`} >{presentacion.tituloDePresentacion}</Presentacion>))
             }
             </div>
-            <Header3>Bases de datos<Link href='/recursos/bases-de-datos'><a>Ver todas</a></Link></Header3>
+            <Header3>Bases de datos<Link href='/recursos/bases-de-datos'>Ver todas</Link></Header3>
             <div className={styles.files}>
             {bds.map(bd => (
               <BaseDeDatos key={bd.sys.id} nombre={bd.nombre} url={bd.archivoCollection.items[0]?.url}/>

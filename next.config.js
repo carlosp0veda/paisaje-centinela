@@ -1,6 +1,10 @@
 module.exports = {
   images: {
-    domains: ['images.ctfassets.net','i.stack.imgur.com','genius100visions.com'],
+    remotePatterns: [
+      { protocol: 'https', hostname: 'images.ctfassets.net' },
+      { protocol: 'https', hostname: 'i.stack.imgur.com' },
+      { protocol: 'https', hostname: 'genius100visions.com' },
+    ],
   },
 
   async headers() {

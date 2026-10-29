@@ -30,7 +30,7 @@ return (<main className={styles.mainWrapper}>
         <aside className={styles.infoWrapper}>
           <div className={styles.foto}>
             {foto
-              ? <Image src={foto} layout='fill' objectFit='cover' alt=''/>
+              ? <Image src={foto} fill sizes='160px' style={{objectFit: 'cover'}} alt=''/>
               : <span aria-hidden="true">{investigador[0].nombre?.charAt(0)}</span>}
           </div>
           <h1 className={styles.nombre}>{investigador[0].nombre}</h1>

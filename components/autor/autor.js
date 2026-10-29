@@ -9,12 +9,10 @@ const Autor = ({nombre, url, foto}) => {
         <div className={styles.autorWrapper}>
             <div className={styles.avatar}>
                 {src
-                    ? <Image src={src} layout='fill' objectFit='cover' alt=''/>
+                    ? <Image src={src} fill sizes='44px' style={{objectFit: 'cover'}} alt=''/>
                     : <span aria-hidden="true">{nombre?.charAt(0)}</span>}
             </div>
-            <Link href={url}>
-                <a className={styles.nombre}>{nombre}</a>
-            </Link>
+            <Link href={url} className={styles.nombre}>{nombre}</Link>
         </div>
     )
 }

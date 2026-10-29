@@ -13,14 +13,12 @@ const Publicacion = (props) => {
         <article className={styles.publicacion}>
             <div className={styles.imageWrapper}>
                 {thumbnail
-                    ? <Image src={thumbnail} layout='fill' objectFit='cover' alt=''/>
+                    ? <Image src={thumbnail} fill sizes='84px' style={{objectFit: 'cover'}} alt=''/>
                     : <FontAwesomeIcon icon={faFilePdf} className={styles.placeholderIcon}/>}
             </div>
             <div className={styles.info}>
                 <p className={styles.date}>{props.date?.slice(0,4)}</p>
-                <Link href={props.url}>
-                    <a className={styles.titulo}>{props.titulo}</a>
-                </Link>
+                <Link href={props.url} className={styles.titulo}>{props.titulo}</Link>
                 {badges.length > 0 && <div className={styles.badges}>{badges.map(b => <Badge key={b}>{b}</Badge>)}</div>}
             </div>
         </article>

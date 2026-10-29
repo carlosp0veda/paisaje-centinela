@@ -20,23 +20,21 @@ const footer = () => {
         <div className={`container ${styles.upperGrid}`}>
             <div className={styles.brand}>
                 <Link href='/'>
-                    <a>
-                        <span className={styles.wordmark}>Paisaje Centinela</span>
-                        <span className={styles.nicaraguahonduras}>nicaragua-honduras</span>
-                    </a>
+                    <span className={styles.wordmark}>Paisaje Centinela</span>
+                    <span className={styles.nicaraguahonduras}>nicaragua-honduras</span>
                 </Link>
                 <div id="wcb" className="carbonbadge wcb-d"></div>
             </div>
             <nav className={styles.navigation} aria-label="Sitio">
                 <h3>Sitio</h3>
                 <ul className={styles.navigationList}>
-                    {NAV_LINKS.map(link => <li key={link.href}><Link href={link.href}><a>{link.label}</a></Link></li>)}
+                    {NAV_LINKS.map(link => <li key={link.href}><Link href={link.href}>{link.label}</Link></li>)}
                 </ul>
             </nav>
             <nav className={styles.navigation} aria-label="Recursos">
                 <h3>Recursos</h3>
                 <ul className={styles.navigationList}>
-                    {RECURSOS.map(link => <li key={link.href}><Link href={link.href}><a>{link.label}</a></Link></li>)}
+                    {RECURSOS.map(link => <li key={link.href}><Link href={link.href}>{link.label}</Link></li>)}
                 </ul>
             </nav>
         </div>

@@ -7,7 +7,7 @@ const Hero = (props) => {
     const foto = imageOrNull(props.fotoURL)
     return (
         <section className={styles.HeroWrapper}>
-            {foto && <Image className={styles.HeroImage} src={foto} layout='fill' objectFit='cover' priority alt=''/>}
+            {foto && <Image className={styles.HeroImage} src={foto} fill sizes='100vw' style={{objectFit: 'cover'}} priority alt=''/>}
             <div className={styles.overlay} aria-hidden="true"></div>
             <div className={['container', styles.Copy, props.narrow ? styles.narrow : '', props.overlap ? styles.overlap : ''].join(' ')}>
                 {props.eyebrow && <p className={styles.eyebrow}>{props.eyebrow}</p>}

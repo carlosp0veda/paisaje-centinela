@@ -12,9 +12,7 @@ const NavigationBar = () => {
                     const active = isActive(pathname, link.href)
                     return (
                         <li key={link.href}>
-                            <Link href={link.href}>
-                                <a className={[styles.navigationLink, active ? styles.active : ''].join(' ')} aria-current={active ? 'page' : undefined}>{link.label}</a>
-                            </Link>
+                            <Link href={link.href} className={[styles.navigationLink, active ? styles.active : ''].join(' ')} aria-current={active ? 'page' : undefined}>{link.label}</Link>
                         </li>
                     )
                 })}

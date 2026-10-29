@@ -1,6 +1,5 @@
 import dynamic from 'next/dynamic'
 import {getPublicaciones, getArticulos, getPaisajeCentinela, getPresentaciones, getBasesDeDatos} from '../utils/contentful'
-import {motion} from 'framer-motion'
 import Link from 'next/link'
 import FeaturedBanner from '../components/featuredBanner/featuredBanner'
 import styles from '../styles/index.module.css'
@@ -24,22 +23,20 @@ export default function Inicio({publicaciones, articulos, presentaciones, paisaj
             </div>
             <div>
               <p className={styles.excerpt}>{paisajeCentinela[0].excerp}</p>
-              <Link href='/acerca'>
-                <motion.a whileHover={{scale: 1.03}} whileTap={{scale: 0.97}} className={styles.ctaLink}>
-                  Leer más
-                </motion.a>
+              <Link href='/acerca' className={styles.ctaLink}>
+                Leer más
               </Link>
             </div>
           </div>
         </section>
         <section className={`container ${styles.recrusosGrid}`}>
           <div className={styles.leftGrid}>
-            <Header3>Artículos<Link href='/articulos'><a>Ver todos</a></Link></Header3>
+            <Header3>Artículos<Link href='/articulos'>Ver todos</Link></Header3>
             <div className={styles.cards}>
             {articulos.slice(3, 9).map((articulo) => ( <DynamicCard key={articulo.sys.id} date={articulo.sys.firstPublishedAt} fotoURL={articulo.imagen?.url} url={`/articulos/${encodeURIComponent(articulo.slug)}`} >{articulo.titulo}</DynamicCard>)
             )}
             </div>
-            <Header3>Bases de datos<Link href='/recursos/bases-de-datos'><a>Ver todas</a></Link></Header3>
+            <Header3>Bases de datos<Link href='/recursos/bases-de-datos'>Ver todas</Link></Header3>
             <div className={styles.files}>
             {bds.map(bd => (
               <BaseDeDatos key={bd.sys.id} nombre={bd.nombre} url={bd.archivoCollection.items[0]?.url}/>
@@ -47,12 +44,12 @@ export default function Inicio({publicaciones, articulos, presentaciones, paisaj
             </div>
           </div>
           <aside className={styles.rightGrid}>
-            <Header3>Publicaciones<Link href='/recursos/publicaciones'><a>Ver todas</a></Link></Header3>
+            <Header3>Publicaciones<Link href='/recursos/publicaciones'>Ver todas</Link></Header3>
             <div className={styles.list}>
             {publicaciones.map((publicacion) => ( <DynamicPublicacion key={publicacion.sys.id} badge={publicacion.categoria} date={publicacion.aoDePublicacin?.slice(0,4)} titulo={publicacion.titulo} pdfThumbnail={publicacion.fotoPdf?.url} url={`/recursos/publicaciones/${encodeURIComponent(publicacion.slug)}`} >{publicacion.resumen}</DynamicPublicacion>)
             )}
             </div>
-            <Header3>Presentaciones<Link href='/recursos/presentaciones'><a>Ver todas</a></Link></Header3>
+            <Header3>Presentaciones<Link href='/recursos/presentaciones'>Ver todas</Link></Header3>
             <div className={styles.list}>
             {presentaciones.map((presentacion) => ( <DynamicPresentacion key={presentacion.sys.id} date={presentacion.sys.firstPublishedAt.slice(0,4)} titulo={presentacion.tituloDePresentacion} pdfThumbnail={presentacion.capturaPortada?.url} url={`/recursos/presentaciones/${encodeURIComponent(presentacion.slug)}`} >{presentacion.tituloDePresentacion}</DynamicPresentacion>)
             )}

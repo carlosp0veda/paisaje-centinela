@@ -14,14 +14,12 @@ const FeaturedBanner = ({featuredPosts}) => {
                     return (
                         <article key={post.slug} className={[styles.post, POSITIONS[i]].join(' ')}>
                             <div className={styles.imageWrapper}>
-                                {foto && <Image src={foto} priority layout='fill' objectFit="cover" alt=''/>}
+                                {foto && <Image src={foto} priority fill sizes={i === 0 ? '(max-width: 768px) 100vw, 60vw' : '(max-width: 768px) 50vw, 40vw'} style={{objectFit: 'cover'}} alt=''/>}
                             </div>
                             <div className={styles.copy}>
                                 {i === 0 && <p className={styles.eyebrow}>Destacado</p>}
-                                <Link href={`/articulos/${post.slug}`}>
-                                    <a className={styles.link}>
-                                        <h2 className={styles.titulo}>{post.titulo}</h2>
-                                    </a>
+                                <Link href={`/articulos/${post.slug}`} className={styles.link}>
+                                    <h2 className={styles.titulo}>{post.titulo}</h2>
                                 </Link>
                                 {post.sys?.firstPublishedAt && <time className={styles.date} dateTime={post.sys.firstPublishedAt}>{post.sys.firstPublishedAt.slice(0,10)}</time>}
                             </div>

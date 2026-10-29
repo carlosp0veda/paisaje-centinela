@@ -10,14 +10,12 @@ const Card = (props) => {
         <article className={styles.CardStyle}>
             <div className={styles.ImageWrapper}>
                 {foto
-                    ? <Image src={foto} layout='fill' objectFit='cover' alt=''/>
+                    ? <Image src={foto} fill sizes='(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 400px' style={{objectFit: 'cover'}} alt=''/>
                     : <div className={styles.placeholder} aria-hidden="true"></div>}
             </div>
             <div className={styles.body}>
                 {props.date ? <time className={styles.date} dateTime={props.date}>{props.date.slice(0,10)}</time> : null}
-                <Link href={props.url}>
-                    <a className={styles.titulo}>{props.children}</a>
-                </Link>
+                <Link href={props.url} className={styles.titulo}>{props.children}</Link>
             </div>
         </article>
     )

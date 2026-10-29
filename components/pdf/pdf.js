@@ -10,7 +10,7 @@ const Pdf = (props) => {
         <div className={styles.pdfWrapper}>
             <div className={styles.imageWrapper}>
                 {thumbnail
-                    ? <Image src={thumbnail} layout='fill' objectFit='cover' alt={props.titulo}/>
+                    ? <Image src={thumbnail} fill sizes='(max-width: 768px) 100vw, 260px' style={{objectFit: 'cover'}} alt={props.titulo}/>
                     : <FontAwesomeIcon icon={faFilePdf} className={styles.placeholderIcon}/>}
             </div>
             {props.date && <p className={styles.year}><span>Año</span>{props.date.slice(0,4)}</p>}

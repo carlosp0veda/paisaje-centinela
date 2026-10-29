@@ -21,12 +21,10 @@ export default function Investigadores({investigadores}) {
               <article key={investigador.sys.id} className={styles.investigadorCard}>
                 <div className={styles.fotoWrapper}>
                   {foto
-                    ? <Image src={foto} layout='fill' objectFit='cover' alt=''/>
+                    ? <Image src={foto} fill sizes='128px' style={{objectFit: 'cover'}} alt=''/>
                     : <span aria-hidden="true">{investigador.nombre?.charAt(0)}</span>}
                 </div>
-                <Link href={`/investigadores/${investigador.slug}`}>
-                  <a className={styles.nombre}>{investigador.nombre}</a>
-                </Link>
+                <Link href={`/investigadores/${investigador.slug}`} className={styles.nombre}>{investigador.nombre}</Link>
                 {investigador.organizacion && <p className={styles.organizacion}>{investigador.organizacion}</p>}
                 {investigador.rol && <p className={styles.rol}>{investigador.rol}</p>}
               </article>

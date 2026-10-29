@@ -28,14 +28,14 @@ function ArticuloPage({articulo, relacionados, minutos}) {
             {articulo[0].publicador && (
               <div className={styles.metaItem}>
                 <p className={styles.label}>Publicado por</p>
-                <Link href={`/investigadores/${articulo[0].publicador.slug}`}><a className={styles.link}>{articulo[0].publicador.nombre}</a></Link>
+                <Link href={`/investigadores/${articulo[0].publicador.slug}`} className={styles.link}>{articulo[0].publicador.nombre}</Link>
               </div>
             )}
             <div className={styles.metaItem}>
               <p className={styles.label}>Lectura</p>
               <p className={styles.metaValue}>{minutos} min</p>
             </div>
-            <Link href='/articulos'><a className={styles.volver}>← Todos los artículos</a></Link>
+            <Link href='/articulos' className={styles.volver}>← Todos los artículos</Link>
           </aside>
           <article className={styles.copy}>
           {documentToReactComponents(articulo[0].contenido.json, RICHTEXT_OPTIONS)}
@@ -43,7 +43,7 @@ function ArticuloPage({articulo, relacionados, minutos}) {
         </section>
         {relacionados.length > 0 && (
           <section className="container">
-            <Header3>Más artículos<Link href='/articulos'><a>Ver todos</a></Link></Header3>
+            <Header3>Más artículos<Link href='/articulos'>Ver todos</Link></Header3>
             <div className={styles.relacionados}>
               {relacionados.map(r => <Card key={r.sys.id} date={r.sys.firstPublishedAt} fotoURL={r.imagen?.url} url={`/articulos/${encodeURIComponent(r.slug)}`}>{r.titulo}</Card>)}
             </div>

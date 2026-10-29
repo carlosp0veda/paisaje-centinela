@@ -22,6 +22,14 @@
   border-right: 1px solid var(--line);
 }
 
+.brandInner {
+  transition: transform 0.15s ease;
+}
+
+.brand:active .brandInner {
+  transform: scale(0.96);
+}
+
 .wordmark {
   display: block;
   font-family: var(--font-brand);

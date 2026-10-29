@@ -14,19 +14,15 @@ const SideDrawer = (props) => {
     <>
       <Backdrop clicked={props.closed} show={props.open} />
       <div className={attachedStyles.join(" ")} onClick={props.closed} aria-hidden={!props.open}>
-        <Link href="/">
-          <a className={styles.logo}>
-            <span className={styles.wordmark}>Paisaje Centinela</span>
-            <span className={styles.nicaraguahonduras}>nicaragua-honduras</span>
-          </a>
+        <Link href="/" className={styles.logo}>
+          <span className={styles.wordmark}>Paisaje Centinela</span>
+          <span className={styles.nicaraguahonduras}>nicaragua-honduras</span>
         </Link>
         <nav aria-label="Principal">
           <ul className={styles.list}>
             {NAV_LINKS.map(link => (
               <li key={link.href}>
-                <Link href={link.href}>
-                  <a className={[styles.listLink, isActive(pathname, link.href) ? styles.active : ''].join(' ')} tabIndex={props.open ? 0 : -1}>{link.label}</a>
-                </Link>
+                <Link href={link.href} className={[styles.listLink, isActive(pathname, link.href) ? styles.active : ''].join(' ')} tabIndex={props.open ? 0 : -1}>{link.label}</Link>
               </li>
             ))}
           </ul>

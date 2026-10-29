@@ -60,7 +60,7 @@
   font-weight: 600;
   color: #fff;
   cursor: pointer;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
 }
 
 .ctaLink::after {
@@ -70,6 +70,11 @@
 .ctaLink:hover {
   background-color: #fff;
   color: var(--green2);
+  transform: scale(1.03);
+}
+
+.ctaLink:active {
+  transform: scale(0.97);
 }
 
 /* Recursos: dos columnas, como antes */
