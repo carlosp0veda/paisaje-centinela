@@ -64,3 +64,28 @@
 .CardStyle:hover .titulo {
   color: var(--green);
 }
+
+/* Variante compacta en móvil: miniatura a la izquierda y título a la derecha,
+   para que la lista de artículos de Inicio no ocupe varias pantallas. */
+@media screen and (max-width: 640px) {
+  .compact {
+    flex-flow: row;
+    min-height: 96px;
+  }
+
+  .compact .ImageWrapper {
+    flex: 0 0 112px;
+    width: 112px;
+    aspect-ratio: auto;
+  }
+
+  .compact .body {
+    justify-content: center;
+    gap: 4px;
+    padding: 12px 14px;
+  }
+
+  .compact .titulo {
+    font-size: 15px;
+  }
+}

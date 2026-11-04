@@ -3,10 +3,12 @@ import {getPresentaciones} from '../../../utils/contentful'
 import CustomBreadcrumbs from '../../../components/breadcrumbs/CustomBreadcrumbs'
 import PageHeader from '../../../components/pageHeader/pageHeader'
 import Presentacion from '../../../components/presentacion/presentacion'
+import Seo from '../../../components/seo/seo'
 
 const PresentacionesPage = ({presentaciones}) => {
     return (
         <main>
+        <Seo titulo="Presentaciones"/>
         <CustomBreadcrumbs/>
          <PageHeader eyebrow="recursos" titulo="Presentaciones" count={presentaciones.length} descripcion="Presentaciones del equipo disponibles para consulta en línea."/>
          <div className="container page-body">

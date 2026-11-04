@@ -3,10 +3,12 @@ import PageHeader from '../../../components/pageHeader/pageHeader'
 import styles from './bd.module.css'
 import CustomBreadcrumbs from '../../../components/breadcrumbs/CustomBreadcrumbs'
 import BaseDeDatos from '../../../components/baseDeDatos/baseDeDatos'
+import Seo from '../../../components/seo/seo'
 
 const BasesDeDatosPage = ({bds}) => {
     return (
       <main>
+        <Seo titulo="Bases de datos"/>
         <CustomBreadcrumbs/>
         <PageHeader eyebrow="recursos" titulo="Bases de datos" count={bds.length} descripcion="Conjuntos de datos en formato Excel, disponibles para descarga."/>
         <section className="container page-body">

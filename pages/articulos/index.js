@@ -3,11 +3,13 @@ import {getArticulos} from '../../utils/contentful'
 import CustomBreadcrumbs from '../../components/breadcrumbs/CustomBreadcrumbs'
 import PageHeader from '../../components/pageHeader/pageHeader'
 import Card from '../../components/card/card'
+import Seo from '../../components/seo/seo'
 
 
 const ArticulosPage = ({articulos}) => {
     return (
         <main>
+            <Seo titulo="Artículos" descripcion="Notas y hallazgos de las investigaciones en el Paisaje Centinela Nicaragua-Honduras."/>
             <CustomBreadcrumbs/>
             <PageHeader eyebrow="paisaje centinela" titulo="Artículos" count={articulos.length} descripcion="Notas y hallazgos de las investigaciones en el Paisaje Centinela Nicaragua-Honduras."/>
             <section className="container page-body">

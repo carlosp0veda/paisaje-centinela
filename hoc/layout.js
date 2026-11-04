@@ -3,7 +3,6 @@ import styles from './layout.module.css'
 import Header from '../components/header/header'
 import SideDrawer from '../components/navigation/sidedrawer/sidedrawer'
 import Footer from '../components/footer/footer'
-import Head from 'next/head'
 
 
 
@@ -23,17 +22,12 @@ function layout({children}) {
     });
   };
     return (
-        <>
-        <Head>
-            <title>Paisaje Centinela</title>
-        </Head>
         <div className={styles.container}>
          <Header clicked={toggleSideDrawerHandler} open={sideDrawer.showSideDrawer}/>
          <SideDrawer  open={sideDrawer.showSideDrawer} closed={sideDrawerCloseHandler}/>
          {children}
          <Footer/>
         </div>
-        </>
     )
 }
 

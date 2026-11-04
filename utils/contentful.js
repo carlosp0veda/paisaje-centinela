@@ -7,6 +7,8 @@ const graphQLClient = new GraphQLClient(endpoint, {
     headers: {
       authorization: `Bearer ${process.env.CDA_TOKEN}`,
     },
+    // fetch nativo: el cross-fetch por defecto usa node:http, que falla en Cloudflare Workers
+    fetch: (...args) => fetch(...args),
   })
 
  // PAISAJE CENTINELA DESCRIPCION

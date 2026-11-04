@@ -8,6 +8,7 @@ import Image from 'next/image'
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer'
 import {BLOCKS} from '@contentful/rich-text-types'
 import {imageOrNull} from '../../../utils/image'
+import Seo from '../../../components/seo/seo'
 
 
 function InvestigadorPage({investigador}) {
@@ -24,6 +25,7 @@ function InvestigadorPage({investigador}) {
     }
 
 return (<main className={styles.mainWrapper}>
+      <Seo titulo={investigador[0].nombre} imagen={investigador[0].foto?.url}/>
       <CustomBreadcrumbs/>
       <div className="container">
       <section className={styles.infoGrid}>

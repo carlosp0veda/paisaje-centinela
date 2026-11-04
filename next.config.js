@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: 'images.ctfassets.net' },

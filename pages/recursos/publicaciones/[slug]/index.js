@@ -8,6 +8,7 @@ import Pdf from '../../../../components/pdf/pdf'
 import Autor from '../../../../components/autor/autor'
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer'
 import {BLOCKS } from '@contentful/rich-text-types'
+import Seo from '../../../../components/seo/seo'
 
 
 function PublicacionPage({publicacion}) {
@@ -22,6 +23,7 @@ function PublicacionPage({publicacion}) {
 
     return (
       <main>
+            <Seo titulo={publicacion[0].titulo} imagen={publicacion[0].foto?.url}/>
             <CustomBreadcrumbs  />
             <Hero fotoURL={publicacion[0].foto?.url} date={publicacion[0].sys.firstPublishedAt} eyebrow="Publicación">{publicacion[0].titulo}</Hero>
             <section className={`container ${styles.body}`}>

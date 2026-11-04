@@ -1,6 +1,7 @@
 import styles from './hero.module.css'
 import Image from 'next/image'
 import {imageOrNull} from '../../utils/image'
+import {formatFecha} from '../../utils/date'
 
 
 const Hero = (props) => {
@@ -14,7 +15,7 @@ const Hero = (props) => {
                 <h1 className={styles.titulo}>{props.children}</h1>
                 {(props.date || props.meta) && (
                     <p className={styles.date}>
-                        {props.date && <time dateTime={props.date}>{props.date.slice(0,10)}</time>}
+                        {props.date && <time dateTime={props.date}>{formatFecha(props.date)}</time>}
                         {props.date && props.meta && <span aria-hidden="true"> · </span>}
                         {props.meta}
                     </p>

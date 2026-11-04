@@ -5,14 +5,16 @@ import PageHeader from '../../components/pageHeader/pageHeader'
 import Image from 'next/image'
 import Link from 'next/link'
 import {imageOrNull} from '../../utils/image'
+import Seo from '../../components/seo/seo'
 
 
 export default function Investigadores({investigadores}) {
     const staff = investigadores.filter(investigador => investigador.staffPrimario)
     return (
         <main>
+        <Seo titulo="Equipo" descripcion="Personas e instituciones que investigan y trabajan en el Paisaje Centinela Nicaragua-Honduras."/>
         <CustomBreadcrumbs/>
-        <PageHeader eyebrow="equipo" titulo="Colaboradores" count={staff.length} descripcion="Personas e instituciones que investigan y trabajan en el Paisaje Centinela Nicaragua-Honduras."/>
+        <PageHeader eyebrow="paisaje centinela" titulo="Equipo" count={staff.length} descripcion="Personas e instituciones que investigan y trabajan en el Paisaje Centinela Nicaragua-Honduras."/>
         <section className="container page-body">
           <div className={styles.investigadoresGrid}>
           {staff.map(investigador => {

@@ -4,6 +4,7 @@ import Header3 from '../../components/UI/header3/header3'
 import {getPaisajeCentinela} from '../../utils/contentful'
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer'
 import {BLOCKS} from '@contentful/rich-text-types'
+import Seo from '../../components/seo/seo'
 
 function DescripcionPage({paisajeCentinela}) {
 
@@ -20,6 +21,7 @@ function DescripcionPage({paisajeCentinela}) {
 
     return (
         <main className={styles.contentWrapper}>
+        <Seo titulo="Acerca" descripcion={paisajeCentinela[0].excerp} imagen={paisajeCentinela[0].imagen?.url}/>
         <Hero fotoURL={paisajeCentinela[0].imagen?.url} eyebrow="Acerca" narrow overlap>Paisaje Centinela (Nicaragua-Honduras)</Hero>
         <div className={`container ${styles.layout}`}>
             <article className={styles.contenido}>

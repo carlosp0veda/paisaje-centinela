@@ -14,6 +14,7 @@ export default function Inicio({publicaciones, articulos, presentaciones, paisaj
 
   return (
       <main className={styles.main}>
+        <h1 className="visually-hidden">Paisaje Centinela Nicaragua-Honduras</h1>
         <FeaturedBanner featuredPosts={articulos.slice(0,3)}/>
         <section className={styles.descripcion}>
           <div className={`container ${styles.descripcionInner}`}>
@@ -31,12 +32,12 @@ export default function Inicio({publicaciones, articulos, presentaciones, paisaj
         </section>
         <section className={`container ${styles.recrusosGrid}`}>
           <div className={styles.leftGrid}>
-            <Header3>Artículos<Link href='/articulos'>Ver todos</Link></Header3>
+            <Header3 action={<Link href='/articulos'>Ver todos</Link>}>Artículos</Header3>
             <div className={styles.cards}>
-            {articulos.slice(3, 9).map((articulo) => ( <DynamicCard key={articulo.sys.id} date={articulo.sys.firstPublishedAt} fotoURL={articulo.imagen?.url} url={`/articulos/${encodeURIComponent(articulo.slug)}`} >{articulo.titulo}</DynamicCard>)
+            {articulos.slice(3, 9).map((articulo) => ( <DynamicCard key={articulo.sys.id} compact date={articulo.sys.firstPublishedAt} fotoURL={articulo.imagen?.url} url={`/articulos/${encodeURIComponent(articulo.slug)}`} >{articulo.titulo}</DynamicCard>)
             )}
             </div>
-            <Header3>Bases de datos<Link href='/recursos/bases-de-datos'>Ver todas</Link></Header3>
+            <Header3 action={<Link href='/recursos/bases-de-datos'>Ver todas</Link>}>Bases de datos</Header3>
             <div className={styles.files}>
             {bds.map(bd => (
               <BaseDeDatos key={bd.sys.id} nombre={bd.nombre} url={bd.archivoCollection.items[0]?.url}/>
@@ -44,12 +45,12 @@ export default function Inicio({publicaciones, articulos, presentaciones, paisaj
             </div>
           </div>
           <aside className={styles.rightGrid}>
-            <Header3>Publicaciones<Link href='/recursos/publicaciones'>Ver todas</Link></Header3>
+            <Header3 action={<Link href='/recursos/publicaciones'>Ver todas</Link>}>Publicaciones</Header3>
             <div className={styles.list}>
             {publicaciones.map((publicacion) => ( <DynamicPublicacion key={publicacion.sys.id} badge={publicacion.categoria} date={publicacion.aoDePublicacin?.slice(0,4)} titulo={publicacion.titulo} pdfThumbnail={publicacion.fotoPdf?.url} url={`/recursos/publicaciones/${encodeURIComponent(publicacion.slug)}`} >{publicacion.resumen}</DynamicPublicacion>)
             )}
             </div>
-            <Header3>Presentaciones<Link href='/recursos/presentaciones'>Ver todas</Link></Header3>
+            <Header3 action={<Link href='/recursos/presentaciones'>Ver todas</Link>}>Presentaciones</Header3>
             <div className={styles.list}>
             {presentaciones.map((presentacion) => ( <DynamicPresentacion key={presentacion.sys.id} date={presentacion.sys.firstPublishedAt.slice(0,4)} titulo={presentacion.tituloDePresentacion} pdfThumbnail={presentacion.capturaPortada?.url} url={`/recursos/presentaciones/${encodeURIComponent(presentacion.slug)}`} >{presentacion.tituloDePresentacion}</DynamicPresentacion>)
             )}

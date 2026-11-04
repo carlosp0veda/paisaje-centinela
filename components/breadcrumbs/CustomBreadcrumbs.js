@@ -2,7 +2,13 @@ import Link from 'next/link'
 import {useRouter} from 'next/router'
 import styles from './breadcrumbs.module.css'
 
+// Secciones cuyo nombre visible no coincide con la URL.
+const LABELS = {
+    investigadores: 'Equipo',
+}
+
 const formatLabel = (title) => {
+    if (LABELS[title]) return LABELS[title]
     let label = title
     try {
         label = decodeURIComponent(title)

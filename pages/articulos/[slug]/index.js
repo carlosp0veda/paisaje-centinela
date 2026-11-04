@@ -8,6 +8,7 @@ import CustomBreadcrumbs from '../../../components/breadcrumbs/CustomBreadcrumbs
 import {documentToReactComponents} from '@contentful/rich-text-react-renderer'
 import {BLOCKS} from '@contentful/rich-text-types'
 import {minutosDeLectura} from '../../../utils/richText'
+import Seo from '../../../components/seo/seo'
 
 
 function ArticuloPage({articulo, relacionados, minutos}) {
@@ -21,6 +22,7 @@ function ArticuloPage({articulo, relacionados, minutos}) {
 
     return (
       <main>
+        <Seo titulo={articulo[0].titulo} imagen={articulo[0].imagen?.url}/>
         <CustomBreadcrumbs/>
         <Hero fotoURL={articulo[0].imagen?.url} date={articulo[0].sys.firstPublishedAt} meta={`${minutos} min de lectura`} eyebrow="Artículo">{articulo[0].titulo}</Hero>
         <section className={`container ${styles.contenidoWrapper}`}>
@@ -43,7 +45,7 @@ function ArticuloPage({articulo, relacionados, minutos}) {
         </section>
         {relacionados.length > 0 && (
           <section className="container">
-            <Header3>Más artículos<Link href='/articulos'>Ver todos</Link></Header3>
+            <Header3 action={<Link href='/articulos'>Ver todos</Link>}>Más artículos</Header3>
             <div className={styles.relacionados}>
               {relacionados.map(r => <Card key={r.sys.id} date={r.sys.firstPublishedAt} fotoURL={r.imagen?.url} url={`/articulos/${encodeURIComponent(r.slug)}`}>{r.titulo}</Card>)}
             </div>

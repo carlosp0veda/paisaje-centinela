@@ -10,6 +10,7 @@ import reducer from '../../../store/reducer'
 import {ACTIONS} from '../../../store/actions'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import Seo from '../../../components/seo/seo'
 
 // Marcas diacríticas combinantes (U+0300–U+036F)
 const DIACRITICOS = new RegExp(`[${String.fromCharCode(0x300)}-${String.fromCharCode(0x36f)}]`, 'g')
@@ -73,6 +74,7 @@ const PublicacionesPage = (props) => {
 
     return (
         <main>
+        <Seo titulo="Publicaciones"/>
         <CustomBreadcrumbs/>
         <PageHeader eyebrow="recursos" titulo="Publicaciones" count={state.publicaciones.items.length} descripcion="Informes, documentos técnicos y artículos generados en el Paisaje Centinela.">
           <div className={styles.filtros}>

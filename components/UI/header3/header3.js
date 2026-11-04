@@ -1,8 +1,16 @@
 import styles from './header3.module.css'
 
-const Header3 = (props) => {
+// `action` (p. ej. un enlace "Ver todos") va junto al título, fuera del <h3>,
+// para que el lector de pantalla anuncie solo el nombre de la sección.
+const Header3 = ({children, action}) => {
+    if (!action) {
+        return <h3 className={styles.h3}>{children}</h3>
+    }
     return (
-        <h3 className={styles.h3}>{props.children}</h3>
+        <div className={styles.h3}>
+            <h3 className={styles.titulo}>{children}</h3>
+            {action}
+        </div>
     )
 }
 

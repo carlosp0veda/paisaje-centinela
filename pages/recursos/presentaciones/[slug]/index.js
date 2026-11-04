@@ -3,6 +3,7 @@ import styles from './presentacion.module.css'
 import CustomBreadcrumbs from '../../../../components/breadcrumbs/CustomBreadcrumbs'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDownload } from '@fortawesome/free-solid-svg-icons'
+import Seo from '../../../../components/seo/seo'
 
 
 function PresentacionPage({presentacion}) {
@@ -10,6 +11,7 @@ function PresentacionPage({presentacion}) {
 
     return (
       <main className={styles.mainWrapper}>
+            <Seo titulo={presentacion[0].tituloDePresentacion}/>
             <CustomBreadcrumbs  />
             <div className="container">
               <header className={styles.heading}>

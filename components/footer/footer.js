@@ -1,4 +1,3 @@
-import Script from 'next/script'
 import Link from 'next/link'
 import styles from './footer.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -15,7 +14,6 @@ const footer = () => {
     const date = new Date()
     const year = date.getFullYear()
     return (
-        <>
         <footer className={styles.footerContainer}>
         <div className={`container ${styles.upperGrid}`}>
             <div className={styles.brand}>
@@ -23,7 +21,6 @@ const footer = () => {
                     <span className={styles.wordmark}>Paisaje Centinela</span>
                     <span className={styles.nicaraguahonduras}>nicaragua-honduras</span>
                 </Link>
-                <div id="wcb" className="carbonbadge wcb-d"></div>
             </div>
             <nav className={styles.navigation} aria-label="Sitio">
                 <h3>Sitio</h3>
@@ -46,9 +43,6 @@ const footer = () => {
             </a>
         </div>
         </footer>
-        <Script src="https://unpkg.com/website-carbon-badges@1.1.3/b.min.js" defer/>
-        </>
-
     )
 }
 
